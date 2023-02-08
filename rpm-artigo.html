@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, user-scalable=no" >
+ 
+  <title>meuApp</title>
+
+<!-- <link href="../styles/pagina-do-editor.css" rel="stylesheet"/> -->
+<style>
+ * {margin: 0; padding: 0}
+  
+    body {
+	background-color: #363636;
+	}
+	
+	#flexContainer {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	border: 1px solid lime;
+    }
+	
+	#titulo {
+	 border: 1px solid red;
+	 height: 50px;
+	 width: 100%;
+	 margin: 10px;
+	}
+	
+	.formInicio {
+	 display: flex;
+	 flex-direction: column;
+	 justify-content: center;
+	 align-items: center;
+	 border: 1px solid red;
+	 //height: 100px;
+	 width: 100%;
+	 margin: 10px;
+	}
+	
+	.formInicio p {
+	 margin-top: 20px;
+	 font-size: 1.3rem;
+	}
+	
+	.formInicio input {
+	 width: 100px;
+	 height: 40px;
+	 border: 1px solid red;
+	 margin-right: 10px;
+	 
+	 text-align: center;
+	 
+	}
+	
+	.formInicio label {
+	 height: 100px;
+	 width: 100px;
+	 font-size: 15px;
+	 border: 1px solid lime;
+	}
+	
+	
+	.navInicio2 {
+	 display: flex;
+	 flex: 1;
+	 justify-content: center;
+	 align-items: center;
+	 border: 1px solid red;
+	 height: 100px;
+	 width: 100%;
+	}
+	
+	.navInicio2 a {
+     background-color: lime;
+	 border-radius: 5px;
+	 margin: 10px;
+	}
+	
+</style>
+
+</head>
+<body id="flexContainer">
+ <div id="titulo">RPM</div>
+ 
+    <form class="formInicio">
+		<div class="forms">
+		<p>TEAR 01</p>
+		<input placeholder="RPM"/>
+		<input placeholder="ART"/>
+		</div>
+
+		<div>
+		<p>TEAR 02</p>
+		<input placeholder="RPM"/>
+		<input placeholder="ART"/>
+		</div>
+
+		<div>
+		<p>TEAR 03</p>
+		<input placeholder="RPM"/>
+		<input placeholder="ART"/>
+		</div>
+
+		<div>
+		<p>TEAR 04</p>
+		<input placeholder="RPM"/>
+		<input placeholder="ART"/>
+		</div>
+
+		<div>
+		<p>TEAR 05</p>
+		<input placeholder="RPM"/>
+		<input placeholder="ART"/>
+		</div>
+
+		<div>
+		<p>TEAR 06</p>
+		<input placeholder="RPM"/>
+		<input placeholder="ART"/>
+		</div>
+
+		<div>
+		<p>TEAR 07</p>
+		<input placeholder="RPM"/>
+		<input placeholder="ART"/>
+		</div>
+
+		<div>
+		<p>TEAR 08</p>
+		<input placeholder="RPM"/>
+		<input placeholder="ART"/>
+		</div>
+		
+		<div>
+		<p>TEAR 09</p>
+		<input placeholder="RPM"/>
+		<input placeholder="ART"/>
+		</div>
+
+		<div>
+		<p>TEAR 10</p>
+		<input placeholder="RPM"/>
+		<input placeholder="ART"/>
+		</div>
+
+		<div>
+		<p>TEAR 11</p>
+		<input placeholder="RPM"/>
+		<input placeholder="ART"/>
+		</div>
+
+		<div>
+		<p>TEAR 12</p>
+		<input placeholder="RPM"/>
+		<input placeholder="ART"/>
+		</div>		
+
+    </form>
+
+
+<div class="navInicio2">
+ <a href="index.html">HOME</a>
+ <a onclick="save()">SALVAR</a>
+</div>
+
+<script>
+ 
+  let grupo = localStorage.getItem('grupo');
+ let desc = document.querySelectorAll('p');
+
+switch(grupo) {
+ case '1':
+  desc[0].innerHTML = 'TEAR 1'; desc[1].innerHTML = 'TEAR 2'; desc [2 ].innerHTML = 'TEAR 3'; desc [3 ].innerHTML = 'TEAR 4';
+  desc[4].innerHTML = 'TEAR 5'; desc[5].innerHTML = 'TEAR 6'; desc [6 ].innerHTML = 'TEAR 7'; desc [7 ].innerHTML = 'TEAR 8';
+  desc[8].innerHTML = 'TEAR 9'; desc[9].innerHTML = 'TEAR 10'; desc[10].innerHTML = 'TEAR 11'; desc[11].innerHTML = 'TEAR 12';
+  break;
+ case '2':
+  desc[0].innerHTML = 'TEAR 13'; desc[1].innerHTML = 'TEAR 14'; desc[2 ].innerHTML = 'TEAR 15'; desc[3 ].innerHTML = 'TEAR 16';
+  desc[4].innerHTML = 'TEAR 17'; desc[5].innerHTML = 'TEAR 18'; desc[6 ].innerHTML = 'TEAR 19'; desc[7 ].innerHTML = 'TEAR 20';
+  desc[8].innerHTML = 'TEAR 21'; desc[9].innerHTML = 'TEAR 22'; desc[10].innerHTML = 'TEAR 23'; desc[11].innerHTML = 'TEAR 24';
+  break;
+ case '3':
+  desc[0].innerHTML = 'TEAR 25'; desc[1].innerHTML = 'TEAR 26'; desc[2 ].innerHTML = 'TEAR 27'; desc[3 ].innerHTML = 'TEAR 28';
+  desc[4].innerHTML = 'TEAR 29'; desc[5].innerHTML = 'TEAR 30'; desc[6 ].innerHTML = 'TEAR 31'; desc[7 ].innerHTML = 'TEAR 32';
+  desc[8].innerHTML = 'TEAR 33'; desc[9].innerHTML = 'TEAR 34'; desc[10].innerHTML = 'TEAR 35'; desc[11].innerHTML = 'TEAR 36';
+  break;
+ case '4':
+  desc[0].innerHTML = 'TEAR 37'; desc[1].innerHTML = 'TEAR 38'; desc[2 ].innerHTML = 'TEAR 39'; desc[3 ].innerHTML = 'TEAR 40';
+  desc[4].innerHTML = 'TEAR 41'; desc[5].innerHTML = 'TEAR 42'; desc[6 ].innerHTML = 'TEAR 43'; desc[7 ].innerHTML = 'TEAR 44';
+  desc[8].innerHTML = 'TEAR 45'; desc[9].innerHTML = 'TEAR 46'; desc[10].innerHTML = 'TEAR 47'; desc[11].innerHTML = 'TEAR 48';
+  break;
+ case '5':
+  desc[0].innerHTML = 'TEAR 49'; desc[1].innerHTML = 'TEAR 50'; desc[2 ].innerHTML = 'TEAR 51'; desc[3 ].innerHTML = 'TEAR 52';
+  desc[4].innerHTML = 'TEAR 53'; desc[5].innerHTML = 'TEAR 54'; desc[6 ].innerHTML = 'TEAR 55'; desc[7 ].innerHTML = 'TEAR 56';
+  desc[8].innerHTML = 'TEAR 57'; desc[9].innerHTML = 'TEAR 58'; desc[10].innerHTML = 'TEAR 59'; desc[11].innerHTML = 'TEAR 60';
+  break;
+ case '6':
+  desc[0].innerHTML = 'TEAR 61'; desc[1].innerHTML = 'TEAR 62'; desc[2 ].innerHTML = 'TEAR 63'; desc[3 ].innerHTML = 'TEAR 64';
+  desc[4].innerHTML = 'TEAR 65'; desc[5].innerHTML = 'TEAR 66'; desc[6 ].innerHTML = 'TEAR 67'; desc[7 ].innerHTML = 'TEAR 68';
+  desc[8].innerHTML = 'TEAR 69'; desc[9].innerHTML = 'TEAR 70'; desc[10].innerHTML = 'TEAR 71'; desc[11].innerHTML = 'TEAR 72';
+  break;
+ case '7':
+  desc[0].innerHTML = 'TEAR 73'; desc[1].innerHTML = 'TEAR 74'; desc[2 ].innerHTML = 'TEAR 75'; desc[3 ].innerHTML = 'TEAR 76';
+  desc[4].innerHTML = 'TEAR 77'; desc[5].innerHTML = 'TEAR 78'; desc[6 ].innerHTML = 'TEAR 79'; desc[7 ].innerHTML = 'TEAR 80';
+  desc[8].innerHTML = 'TEAR 81'; desc[9].innerHTML = 'TEAR 82'; desc[10].innerHTML = 'TEAR 83'; desc[11].innerHTML = 'TEAR 84';
+  break;
+ case '8':
+  desc[0].innerHTML = 'TEAR 85'; desc[1].innerHTML = 'TEAR 86'; desc[2].innerHTML = 'TEAR 87'; desc[3].innerHTML = 'TEAR 88';
+  desc[4].innerHTML = 'TEAR 89'; 
+  break;
+ 
+  default:
+  log("error")
+}
+ 
+ const get = document.querySelectorAll('input');
+ 
+let rpm = [
+  get[0],
+  get[2],
+  get[4],
+  get[6],
+  get[8],
+  get[10],
+  get[12],
+  get[14],
+  get[16],
+  get[18],
+  get[20],
+  get[22],
+]
+ 
+let art = [
+  get[1],
+  get[3],
+  get[5],
+  get[7],
+  get[9],
+  get[11],
+  get[13],
+  get[15],
+  get[17],
+  get[19],
+  get[21],
+  get[23],
+]
+ 
+ 
+ function save() {
+	 function saveIN(x, y) {
+		 localStorage.setItem(x, y);
+        }
+  
+      saveIN('rpm0', rpm[0].value);
+	  saveIN('art0', art[0].value);
+      saveIN('rpm1', rpm[1].value);
+	  saveIN('art1', art[1].value);	
+      saveIN('rpm2', rpm[2].value);
+	  saveIN('art2', art[2].value);	 
+      saveIN('rpm3', rpm[3].value);
+	  saveIN('art3', art[3].value);
+      saveIN('rpm4', rpm[4].value);
+	  saveIN('art4', art[4].value);	
+      saveIN('rpm5', rpm[5].value);
+	  saveIN('art5', art[5].value);
+	  saveIN('rpm6', rpm[6].value);
+	  saveIN('art6', art[6].value);
+      saveIN('rpm7', rpm[7].value);
+	  saveIN('art7', art[7].value);	
+      saveIN('rpm8', rpm[8].value);
+	  saveIN('art8', art[8].value);	
+      saveIN('rpm9', rpm[9].value);
+	  saveIN('art9', art[9].value);
+      saveIN('rpm10', rpm[10].value);
+	  saveIN('art10', art[10].value);	
+      saveIN('rpm11', rpm[11].value);
+	  saveIN('art11', art[11].value);		  
+	
+		confirm('Você deseja salvar esses dados?')
+    };
+	
+	for(let i = 0; i < 12; i++) {
+		art[i].value = localStorage.getItem('art' + i);
+		rpm[i].value = localStorage.getItem('rpm' + i);
+	};
+	
+	
+	
+ 
+</script>
+ 
+
+</body>
+</html> 
+
+

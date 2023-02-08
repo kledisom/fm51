@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, user-scalable=no" >
+ 
+  <title>meuApp</title>
+
+<!-- <link href="../styles/pagina-do-editor.css" rel="stylesheet"/> -->
+<style>
+ * {margin: 0; padding: 0}
+  
+    body {
+	background-color: #363636;
+	font-size: 10px;
+	}
+	
+	table {
+	 text-align: center;
+	 border-collapse: collapse;
+	 border: 1px solid #000;
+	 width: 95%
+	}
+	
+	#nTear, #nArt {
+		background-color: blue;
+		height: 17px;
+	}
+	
+	#urdume, #trama, #dme {
+        background-color: violet;
+		height: 15px;
+		font-size: 11px;
+
+	}
+	
+		#resumo td {
+	     background-color: violet;
+		 height: 15px;
+		 font-size: 11px;
+	}
+	
+	
+	#resumo td:nth-child(2) {
+	     background-color: violet;
+		 height: 15px;
+		 font-size: 11px;
+		 text-align: left;
+	}
+	
+		#resumo td:nth-child(3) {
+	     background-color: violet;
+		 height: 15px;
+		 font-size: 11px;
+		 text-align: left;
+	}
+	
+	table td {
+	 width: 300px;
+	}
+	
+	.ocorrencia {
+		background-color: violet;
+		height: 5px;
+	    width: 1000px;
+		text-align: left;
+	}
+
+    a {
+	 height: 100px;
+	 width: 100px;
+	 border: 1px solid lime;
+	 background-color: violet;
+	 margin: 50px;
+	  font-size: 20px;
+	}
+	
+</style>
+
+</head>
+<body id="flexContainer">
+ 
+    <table border="1">
+       <thead>
+        <tr></tr>
+       </thead>
+        <tbody  id="selecao">
+            <tr>
+			<td colspan="26" id="urdume">URDUME</td>
+			</tr>   
+                <tr>
+                    <td id="nTear">Nº TEAR</td>
+                        <td colspan="2">73</td>
+                            <td colspan="2">74</td>
+                             <td colspan="2">75</td>
+                                <td colspan="2">76</td>
+                                    <td colspan="2">77</td>
+                                     <td colspan="2">78</td>
+                                        <td colspan="2">79</td>
+                                    <td colspan="2">80</td>
+                                <td colspan="2">81</td>
+                            <td colspan="2">82</td>
+                        <td colspan="2">83</td>
+                    <td colspan="2">84</td>                  
+                 </tr>
+                <tr id="nArt">
+                    <td rowspan="2">Artigo</td>
+                        <td colspan="2">0000</td>
+                            <td colspan="2">0000</td>
+                                <td colspan="2">0000</td>
+                                    <td colspan="2">0000</td>
+                                        <td colspan="2">0000</td>
+                                            <td colspan="2">0000</td>
+                                             <td colspan="2">0000</td>
+                                         <td colspan="2">0000</td>
+                                    <td colspan="2">0000</td>
+                                <td colspan="2">0000</td>
+                            <td colspan="2">0000</td>
+                        <td colspan="2">0000</td>
+					<td></td>
+                 </tr>
+                <tr id="nArt">     
+                    <td>D</td><td>R</td>                 
+                         <td>D</td><td>R</td>                 
+                            <td>D</td><td>R</td>                 
+                                <td>D</td><td>R</td>                 
+                                    <td>D</td><td>R</td>                 
+                                        <td>D</td><td>R</td>                 
+                                        <td>D</td><td>R</td>                 
+                                    <td>D</td><td>R</td>                 
+                                <td>D</td><td>R</td>                 
+                             <td>D</td><td>R</td>                 
+                        <td>D</td><td>R</td>                 
+                    <td>D</td><td>R</td> 
+				<td>TOTAL</td>
+                </tr>
+           <tr id="fio-colado">
+              <td class="ocorrencia">FIO COLADO</td>
+                 <td>0</td><td>0</td>
+                    <td>0</td><td>0</td>
+                        <td>0</td><td>0</td>
+                            <td>0</td><td>0</td>
+                              <td>0</td><td>0</td>
+                                <td>0</td><td>0</td>
+                              <td>0</td><td>0</td>
+                          <td>0</td><td>0</td>
+                       <td>0</td><td>0</td>
+                   <td>0</td><td>0</td>
+                <td>0</td><td>0</td>
+              <td>0</td><td>0</td>        
+			<td></td>
+           </tr>
+           <tr id="ponta">
+              <td class="ocorrencia">SUB. PONTA DE FIO</td>
+                 <td>0</td><td>0</td>
+                    <td>0</td><td>0</td>
+                        <td>0</td><td>0</td>
+                            <td>0</td><td>0</td>
+                              <td>0</td><td>0</td>
+                                <td>0</td><td>0</td>
+                              <td>0</td><td>0</td>
+                          <td>0</td><td>0</td>
+                       <td>0</td><td>0</td>
+                   <td>0</td><td>0</td>
+                <td>0</td><td>0</td>
+              <td>0</td><td>0</td> 
+			<td></td>
+           </tr>
+           <tr id="roloEmb">
+              <td class="ocorrencia">ROLO EMBARAÇADO</td>
+                 <td>0</td><td>0</td>
+                    <td>0</td><td>0</td>
+                        <td>0</td><td>0</td>
+                            <td>0</td><td>0</td>
+                              <td>0</td><td>0</td>
+                                <td>0</td><td>0</td>
+                              <td>0</td><td>0</td>
+                          <td>0</td><td>0</td>
+                       <td>0</td><td>0</td>
+                   <td>0</td><td>0</td>
+                <td>0</td><td>0</td>
+              <td>0</td><td>0</td> 
+			<td></td>  
+           </tr>
+           <tr id="fio-fioLd">
+              <td class="ocorrencia">FIO FRACO LADO DIREITO</td>
+                 <td>0</td><td>0</td>
+                    <td>0</td><td>0</td>
+                        <td>0</td><td>0</td>
+                            <td>0</td><td>0</td>
+                              <td>0</td><td>0</td>
+                                <td>0</td><td>0</td>
+                              <td>0</td><td>0</td>
+                          <td>0</td><td>0</td>
+                       <td>0</td><td>0</td>
+                   <td>0</td><td>0</td>
+                <td>0</td><td>0</td>
+              <td>0</td><td>0</td>   
+			 <td></td> 
+           </tr>
+           <tr id="fio-fioLe">
+              <td class="ocorrencia">FIO FRACO LADO ESQUERDO</td>
+                 <td>0</td><td>0</td>
+                    <td>0</td><td>0</td>
+                        <td>0</td><td>0</td>
+                            <td>0</td><td>0</td>
+                              <td>0</td><td>0</td>
+                                <td>0</td><td>0</td>
+                              <td>0</td><td>0</td>
+                          <td>0</td><td>0</td>
+                       <td>0</td><td>0</td>
+                   <td>0</td><td>0</td>
+                <td>0</td><td>0</td>
+              <td>0</td><td>0</td> 
+			 <td></td> 
+           </tr>
+           <tr id="fio-fioMeio">
+              <td class="ocorrencia">FIO FRACO - MEIO</td>
+                 <td>0</td><td>0</td>
+                    <td>0</td><td>0</td>
+                        <td>0</td><td>0</td>
+                            <td>0</td><td>0</td>
+                              <td>0</td><td>0</td>
+                                <td>0</td><td>0</td>
+                              <td>0</td><td>0</td>
+                          <td>0</td><td>0</td>
+                       <td>0</td><td>0</td>
+                   <td>0</td><td>0</td>
+                <td>0</td><td>0</td>
+              <td>0</td><td>0</td>   
+			<td></td>  
+           </tr>
+           <tr id="carritel">
+              <td class="ocorrencia">CARRITEL</td>
+                 <td>0</td><td>0</td>
+                    <td>0</td><td>0</td>
+                        <td>0</td><td>0</td>
+                            <td>0</td><td>0</td>
+                              <td>0</td><td>0</td>
+                                <td>0</td><td>0</td>
+                              <td>0</td><td>0</td>
+                          <td>0</td><td>0</td>
+                       <td>0</td><td>0</td>
+                   <td>0</td><td>0</td>
+                <td>0</td><td>0</td>
+              <td>0</td><td>0</td> 
+			 <td></td> 
+           </tr>
+           <tr id="fioBam">
+              <td class="ocorrencia">FIO BAMBO</td>
+                 <td>0</td><td>0</td>
+                    <td>0</td><td>0</td>
+                        <td>0</td><td>0</td>
+                            <td>0</td><td>0</td>
+                              <td>0</td><td>0</td>
+                                <td>0</td><td>0</td>
+                              <td>0</td><td>0</td>
+                          <td>0</td><td>0</td>
+                       <td>0</td><td>0</td>
+                   <td>0</td><td>0</td>
+                <td>0</td><td>0</td>
+              <td>0</td><td>0</td> 
+			<td></td>  
+           </tr>
+           <tr id="slub">
+              <td class="ocorrencia">SLUB</td>
+                 <td>0</td><td>0</td>
+                    <td>0</td><td>0</td>
+                        <td>0</td><td>0</td>
+                            <td>0</td><td>0</td>
+                              <td>0</td><td>0</td>
+                                <td>0</td><td>0</td>
+                              <td>0</td><td>0</td>
+                          <td>0</td><td>0</td>
+                       <td>0</td><td>0</td>
+                   <td>0</td><td>0</td>
+                <td>0</td><td>0</td>
+              <td>0</td><td>0</td>  
+			<td></td>  
+           </tr>
+           <tr id="bucha">
+              <td class="ocorrencia">BUCHA</td>
+                 <td>0</td><td>0</td>
+                    <td>0</td><td>0</td>
+                        <td>0</td><td>0</td>
+                            <td>0</td><td>0</td>
+                              <td>0</td><td>0</td>
+                                <td>0</td><td>0</td>
+                              <td>0</td><td>0</td>
+                          <td>0</td><td>0</td>
+                       <td>0</td><td>0</td>
+                   <td>0</td><td>0</td>
+                <td>0</td><td>0</td>
+              <td>0</td><td>0</td>  
+			<td></td>  
+           </tr>
+           <tr id="outros">
+            <td class="ocorrencia">OUTROS</td>
+                 <td>0</td><td>0</td>
+                    <td>0</td><td>0</td>
+                        <td>0</td><td>0</td>
+                            <td>0</td><td>0</td>
+                              <td>0</td><td>0</td>
+                                <td>0</td><td>0</td>
+                              <td>0</td><td>0</td>
+                          <td>0</td><td>0</td>
+                       <td>0</td><td>0</td>
+                   <td>0</td><td>0</td>
+                <td>0</td><td>0</td>
+              <td>0</td><td>0</td> 
+			<td></td> 
+           </tr>
+           <tr id="fioGro">
+              <td class="ocorrencia">FIO GROSSO</td>
+                 <td>0</td><td>0</td>
+                    <td>0</td><td>0</td>
+                        <td>0</td><td>0</td>
+                            <td>0</td><td>0</td>
+                              <td>0</td><td>0</td>
+                                <td>0</td><td>0</td>
+                              <td>0</td><td>0</td>
+                          <td>0</td><td>0</td>
+                       <td>0</td><td>0</td>
+                   <td>0</td><td>0</td>
+                <td>0</td><td>0</td>
+              <td>0</td><td>0</td> 
+			<td></td> 
+           </tr>
+ <tr  id="total1">
+    <td class="ocorrencia">TOTAL</td>
+        <td></td><td></td>
+        <td></td><td></td>
+            <td></td><td></td>
+                <td></td><td></td>
+                     <td></td><td></td>
+                      <td></td><td></td>
+                    <td></td><td></td>
+                <td></td><td></td>
+            <td></td><td></td>
+        <td></td><td></td>
+      <td></td><td></td>
+     <td></td><td></td>    
+	<td></td>	
+   </tr>
+        </tbody>
+		
+		<tbody>
+             <tr>
+				<td colspan="26" id="trama">TRAMA</td>
+			 </tr>
+       
+    
+
+           <tr id="noTrama">
+              <td class="ocorrencia">NÓ NA TRAMA</td>
+                 <td>0</td><td>0</td>
+                    <td>0</td><td>0</td>
+                        <td>0</td><td>0</td>
+                            <td>0</td><td>0</td>
+                              <td>0</td><td>0</td>
+                                <td>0</td><td>0</td>
+                              <td>0</td><td>0</td>
+                          <td>0</td><td>0</td>
+                       <td>0</td><td>0</td>
+                   <td>0</td><td>0</td>
+                <td>0</td><td>0</td>
+              <td>0</td><td>0</td>  
+			<td></td> 
+           </tr>
+           <tr id="tramaFra">
+              <td class="ocorrencia">TRAMA FRACA</td>
+                 <td>0</td><td>0</td>
+                    <td>0</td><td>0</td>
+                        <td>0</td><td>0</td>
+                            <td>0</td><td>0</td>
+                              <td>0</td><td>0</td>
+                                <td>0</td><td>0</td>
+                              <td>0</td><td>0</td>
+                          <td>0</td><td>0</td>
+                       <td>0</td><td>0</td>
+                   <td>0</td><td>0</td>
+                <td>0</td><td>0</td>
+              <td>0</td><td>0</td> 
+			<td></td>
+           </tr>
+           <tr id="defBom">
+              <td class="ocorrencia">DEF. BOBINA</td>
+                 <td>0</td><td>0</td>
+                    <td>0</td><td>0</td>
+                        <td>0</td><td>0</td>
+                            <td>0</td><td>0</td>
+                              <td>0</td><td>0</td>
+                                <td>0</td><td>0</td>
+                              <td>0</td><td>0</td>
+                          <td>0</td><td>0</td>
+                       <td>0</td><td>0</td>
+                   <td>0</td><td>0</td>
+                <td>0</td><td>0</td>
+              <td>0</td><td>0</td>  
+			<td></td>
+           </tr>
+           <tr id="coniVazio">
+              <td class="ocorrencia">CONICAL VAZIO</td>
+                 <td>0</td><td>0</td>
+                    <td>0</td><td>0</td>
+                        <td>0</td><td>0</td>
+                            <td>0</td><td>0</td>
+                              <td>0</td><td>0</td>
+                                <td>0</td><td>0</td>
+                              <td>0</td><td>0</td>
+                          <td>0</td><td>0</td>
+                       <td>0</td><td>0</td>
+                   <td>0</td><td>0</td>
+                <td>0</td><td>0</td>
+              <td>0</td><td>0</td>
+			<td></td>
+           </tr>
+           <tr id="quebraCala">
+              <td class="ocorrencia">QUEB. TRAMA CALA</td>
+                 <td>0</td><td>0</td>
+                    <td>0</td><td>0</td>
+                        <td>0</td><td>0</td>
+                            <td>0</td><td>0</td>
+                              <td>0</td><td>0</td>
+                                <td>0</td><td>0</td>
+                              <td>0</td><td>0</td>
+                          <td>0</td><td>0</td>
+                       <td>0</td><td>0</td>
+                   <td>0</td><td>0</td>
+                <td>0</td><td>0</td>
+              <td>0</td><td>0</td>   
+			<td></td>
+           </tr>
+           <tr id="aliA">
+              <td class="ocorrencia">PRE-ALIMENT. "A"</td>
+                 <td>0</td><td>0</td>
+                    <td>0</td><td>0</td>
+                        <td>0</td><td>0</td>
+                            <td>0</td><td>0</td>
+                              <td>0</td><td>0</td>
+                                <td>0</td><td>0</td>
+                              <td>0</td><td>0</td>
+                          <td>0</td><td>0</td>
+                       <td>0</td><td>0</td>
+                   <td>0</td><td>0</td>
+                <td>0</td><td>0</td>
+              <td>0</td><td>0</td>    
+			<td></td>
+           </tr>
+           <tr id="aliB">
+              <td class="ocorrencia">PRE-ALIMENT. "B"</td>
+                 <td>0</td><td>0</td>
+                    <td>0</td><td>0</td>
+                        <td>0</td><td>0</td>
+                            <td>0</td><td>0</td>
+                              <td>0</td><td>0</td>
+                                <td>0</td><td>0</td>
+                              <td>0</td><td>0</td>
+                          <td>0</td><td>0</td>
+                       <td>0</td><td>0</td>
+                   <td>0</td><td>0</td>
+                <td>0</td><td>0</td>
+              <td>0</td><td>0</td>  
+			<td></td>
+           </tr>
+           <tr id="slubTram">
+              <td class="ocorrencia">SLUB</td>
+                 <td>0</td><td>0</td>
+                    <td>0</td><td>0</td>
+                        <td>0</td><td>0</td>
+                            <td>0</td><td>0</td>
+                              <td>0</td><td>0</td>
+                                <td>0</td><td>0</td>
+                              <td>0</td><td>0</td>
+                          <td>0</td><td>0</td>
+                       <td>0</td><td>0</td>
+                   <td>0</td><td>0</td>
+                <td>0</td><td>0</td>
+              <td>0</td><td>0</td>  
+			<td></td>
+           </tr>
+           <tr id="voltTrama">
+              <td class="ocorrencia">VOLTANDO TRAMA</td>
+                 <td>0</td><td>0</td>
+                    <td>0</td><td>0</td>
+                        <td>0</td><td>0</td>
+                            <td>0</td><td>0</td>
+                              <td>0</td><td>0</td>
+                                <td>0</td><td>0</td>
+                              <td>0</td><td>0</td>
+                          <td>0</td><td>0</td>
+                       <td>0</td><td>0</td>
+                   <td>0</td><td>0</td>
+                <td>0</td><td>0</td>
+              <td>0</td><td>0</td>  
+			<td></td>
+           </tr>
+           <tr id="outrosTram">
+              <td class="ocorrencia">OUTROS</td>
+                 <td>0</td><td>0</td>
+                    <td>0</td><td>0</td>
+                        <td>0</td><td>0</td>
+                            <td>0</td><td>0</td>
+                              <td>0</td><td>0</td>
+                                <td>0</td><td>0</td>
+                              <td>0</td><td>0</td>
+                          <td>0</td><td>0</td>
+                       <td>0</td><td>0</td>
+                   <td>0</td><td>0</td>
+                <td>0</td><td>0</td>
+              <td>0</td><td>0</td>      
+			<td></td>
+           </tr>
+           <tr  id="total2">
+            <td class="ocorrencia">TOTAL DE TRAMA</td>
+				<td></td><td></td>
+				<td></td><td></td>
+				<td></td><td></td>
+				<td></td><td></td>
+				<td></td><td></td>
+				<td></td><td></td>
+				<td></td><td></td>
+				<td></td><td></td>
+				<td></td><td></td>
+				<td></td><td></td>
+				<td></td><td></td>
+				<td></td><td></td> 
+			<td></td>
+           </tr>
+           <tr>
+        </tbody>
+		
+      <tbody>
+             <tr>
+				<td colspan="26" id="dme">DEFEITOS MECÂNICOS/ELÉTRICOS</td>
+			 </tr>
+			 
+				<tr>
+					<td class="ocorrencia">PEÇA QUEBRADA</td>
+					<td></td><td></td>
+					<td></td><td></td>
+					<td></td><td></td>
+					<td></td><td></td>
+					<td></td><td></td>
+					<td></td><td></td>
+					<td></td><td></td>
+					<td></td><td></td>
+					<td></td><td></td>
+					<td></td><td></td>
+					<td></td><td></td>
+					<td></td><td></td>  
+					<td></td>
+				</tr>
+				<tr>
+				 <td class="ocorrencia">OUTROS</td>
+					<td></td><td></td>
+					<td></td><td></td>
+					<td></td><td></td>
+					<td></td><td></td>
+					<td></td><td></td>
+					<td></td><td></td>
+					<td></td><td></td>
+					<td></td><td></td>
+					<td></td><td></td>
+					<td></td><td></td>
+					<td></td><td></td>
+					<td></td><td></td> 
+					<td></td>
+				</tr>
+		       <tr>
+				 <td class="ocorrencia">TOTAL</td>
+					<td></td><td></td>
+					<td></td><td></td>
+					<td></td><td></td>
+					<td></td><td></td>
+					<td></td><td></td>
+					<td></td><td></td>
+					<td></td><td></td>
+					<td></td><td></td>
+					<td></td><td></td>
+					<td></td><td></td>
+					<td></td><td></td>
+					<td></td><td></td>  
+					<td></td>
+				</tr>
+
+          
+        </tbody>
+		
+		 <tbody>
+		    <tr>
+			<td colspan="26" height="10"></td>
+			</tr>   
+             <tr id="resumo">
+				<td colspan="9">RESUMO</td>
+				<td colspan="10">QTH</td>
+				<td colspan="7">% DE RUPTURA DA TECELAGEM</td>
+			 </tr>
+			 
+				<tr>
+					<td class="ocorrencia">TOTAL/URDUME</td>
+				    	<td colspan="8">0</td>    
+							<td colspan="10">0</td>   
+								<td colspan="8">0</td>  
+				</tr>
+				<tr>
+					<td class="ocorrencia">TOTAL/TRAMA</td>
+						<td colspan="8">0</td>    
+							<td colspan="10">0</td>   
+								<td colspan="8">0</td> 					
+				</tr>
+				<tr>
+					<td class="ocorrencia">TOTAL/MECÂNICO</td>
+						<td colspan="8">0</td>   
+							<td colspan="10">0</td>   
+								<td colspan="8">0</td> 						
+				</tr>
+				<tr>
+					<td class="ocorrencia">TOTAL/GERAL</td>
+						<td colspan="8">0</td>
+							<td colspan="10">0</td>   
+								<td colspan="8">0</td> 
+				</tr>
+          
+        </tbody>
+
+</table>
+
+
+<a href="index.html">back</a>
+<button onclick="imprimir()">print</button>
+
+
+<div id="pega">
+<p>a</p><p>b</p><p>c</p>
+</div>
+
+
+<script>
+
+const log = console.log;
+
+
+function pop() {
+var nodelist = document.getElementById('selecao').children;
+
+	for (let i = 0; i < nodelist.length; i++){
+	  nodelist[16].style.backgroundColor = "#fff";
+	 
+	}
+}
+
+ console.log(pop());
+ 
+ 
+ //inicio distribuir numeros dos teares---------------------->
+ let grupo = localStorage.getItem('grupo');
+ let desc = document.querySelectorAll('td');
+ 
+ function definirTeares(param) {
+	 let i = 2;
+	 let u = param;
+	 let limit = param + 12;
+		
+	 for( i && u;  i < 14 && u < limit; i++ && u++) {
+		 desc[i].innerHTML = u;
+		};
+	};
+
+switch(grupo) {
+ case '1':
+  definirTeares(1);
+  break;
+ case '2':
+	definirTeares(13);
+  break;
+ case '3':
+	definirTeares(25);
+  break;
+ case '4':
+	definirTeares(37);
+  break;
+ case '5':
+	definirTeares(49);
+  break;
+ case '6':
+	definirTeares(61);
+  break;
+ case '7':
+	definirTeares(73);
+  break;
+ case '8':
+  desc[0].innerHTML = '85'; desc[1].innerHTML = '86'; desc[2].innerHTML = '87'; desc[3].innerHTML = '88';
+  desc[4].innerHTML = '89'; 
+  break;
+ 
+  default:
+  log("error")
+}
+
+  desc[15].innerHTML = localStorage.getItem('art1');
+  desc[16].innerHTML = localStorage.getItem('art2');
+  desc[17].innerHTML = localStorage.getItem('art3');
+  desc[18].innerHTML = localStorage.getItem('art4');
+  desc[19].innerHTML = localStorage.getItem('art5');
+  desc[20].innerHTML = localStorage.getItem('art6'); 
+  desc[21].innerHTML = localStorage.getItem('art7');
+  desc[22].innerHTML = localStorage.getItem('art8');
+  desc[23].innerHTML = localStorage.getItem('art9');
+  desc[24].innerHTML = localStorage.getItem('art10'); 
+  desc[25].innerHTML = localStorage.getItem('art11');
+  desc[26].innerHTML = localStorage.getItem('art12');
+
+ //fim distribuir numeros dos teares---------------------->
+
+function result(n){
+
+ var nodelist = document.getElementById(n).children;
+
+var db = [
+parseInt(localStorage.getItem('tear 01 ' + n)),
+parseInt(localStorage.getItem('tear 02 ' + n)),
+parseInt(localStorage.getItem('tear 03 ' + n)),
+parseInt(localStorage.getItem('tear 04 ' + n)),
+parseInt(localStorage.getItem('tear 05 ' + n)),
+parseInt(localStorage.getItem('tear 06 ' + n)),
+parseInt(localStorage.getItem('tear 07 ' + n)),
+parseInt(localStorage.getItem('tear 08 ' + n)),
+parseInt(localStorage.getItem('tear 09 ' + n)),
+parseInt(localStorage.getItem('tear 10 ' + n)),
+parseInt(localStorage.getItem('tear 11 ' + n)),
+parseInt(localStorage.getItem('tear 12 ' + n)),
+];
+
+ if(db[0] > 0) {
+ nodelist[1 ].innerHTML = db[0];
+ }else {
+  nodelist[1 ].innerHTML = '';
+ }
+ 
+	if(db[1] > 0) {
+	nodelist[3 ].innerHTML = db[1];
+	}else {
+	nodelist[3 ].innerHTML = '';
+	}
+ 
+		if(db[2] > 0) {
+		nodelist[5 ].innerHTML = db[2];
+		}else {
+		nodelist[5 ].innerHTML = '';
+		}
+ 
+			if(db[3] > 0) {
+			nodelist[7 ].innerHTML = db[3];
+			}else {
+			nodelist[7 ].innerHTML = '';
+			}
+ 
+				if(db[4] > 0) {
+				nodelist[9 ].innerHTML = db[4];
+				}else {
+				nodelist[9 ].innerHTML = '';
+				}
+
+					if(db[5] > 0) {
+					nodelist[11].innerHTML = db[5];
+					}else {
+					nodelist[11 ].innerHTML = '';
+					}
+ 
+						if(db[6] > 0) {
+						nodelist[13].innerHTML = db[6];
+						}else {
+						nodelist[13 ].innerHTML = '';
+						}
+ 
+					if(db[7] > 0) {
+					nodelist[15].innerHTML = db[7];
+					}else {
+					nodelist[15 ].innerHTML = '';
+					}
+ 
+				if(db[8] > 0) {
+				nodelist[17].innerHTML = db[8];
+				}else {
+				nodelist[17 ].innerHTML = '';
+				}
+
+			if(db[9] > 0) {
+			nodelist[19].innerHTML = db[9];
+			}else {
+			nodelist[19 ].innerHTML = '';
+			}
+
+		if(db[10] > 0) {
+		nodelist[21].innerHTML = db[10];
+		}else {
+		nodelist[21 ].innerHTML = '';
+		}
+ 
+	if(db[11] > 0) {
+	nodelist[23].innerHTML = db[11];
+	}else {
+	nodelist[23 ].innerHTML = '';
+	}
+ 
+  log(db)
+  
+ function sum(r) {
+	 var soma = 0;
+	 for(let i = 0; i < db.length; i++) {
+		 soma += db[i];
+	 }
+	if(soma > 0) {
+	  nodelist[25].innerHTML = soma;
+	} else {
+	  nodelist[25].innerHTML = '';
+	}
+<!-- var te = document.querySelectorAll('td'); -->
+
+<!-- te.forEach((el) => { -->
+ <!-- el.style.backgroundColor = 'lime'; -->
+<!-- }) -->
+ if(nodelist[r].innerHTML == 0) {
+	 nodelist[r].innerHTML = '';
+ };
+    
+ }
+ sum(2);
+ sum(4);
+ sum(6);
+ sum(8);
+ sum(10);
+ sum(12);
+ sum(14);
+ sum(16);
+ sum(18);
+ sum(20);
+ sum(22);
+ sum(24);
+ 
+ }
+ 
+ function totais(x, n, l){
+
+ var nodelist = document.getElementById(x).children;
+ 
+ var db = [
+  parseInt(localStorage.getItem( n + 'fio-colado')),
+  parseInt(localStorage.getItem( n + 'ponta')),
+  parseInt(localStorage.getItem( n + 'roloEmb')),
+  parseInt(localStorage.getItem( n + 'fio-fioLd')),
+  parseInt(localStorage.getItem( n + 'fio-fioLe')),
+  parseInt(localStorage.getItem( n + 'fio-fioMeio')),
+  parseInt(localStorage.getItem( n + 'carritel')),
+  parseInt(localStorage.getItem( n + 'fioBam')),
+  parseInt(localStorage.getItem( n + 'slub')),
+  parseInt(localStorage.getItem( n + 'bucha')),
+  parseInt(localStorage.getItem( n + 'outros')),
+  parseInt(localStorage.getItem( n + 'fioGro')),
+ ]
+ 
+  var dbT = [
+  parseInt(localStorage.getItem( n + 'noTrama')),
+  parseInt(localStorage.getItem( n + 'tramaFra')),
+  parseInt(localStorage.getItem( n + 'defBom')),
+  parseInt(localStorage.getItem( n + 'coniVazio')),
+  parseInt(localStorage.getItem( n + 'quebraCala')),
+  parseInt(localStorage.getItem( n + 'aliA')),
+  parseInt(localStorage.getItem( n + 'aliB')),
+  parseInt(localStorage.getItem( n + 'slubTram')),
+  parseInt(localStorage.getItem( n + 'voltTrama')),
+ ]
+ 	 <!-- var somaT = 0; -->
+	 <!-- for(let i = 0; i < dbT.length; i++) { -->
+		 <!-- somaT += dbT[i]; -->
+	 <!-- } -->
+	 if(x == 'total1') {
+		var soma = 0;
+	     for(let i = 0; i < db.length; i++) {
+		 soma += db[i];
+	    }
+	 	if(soma > 0) {
+	     nodelist[l].innerHTML = soma;
+	    }
+    }
+	
+	 if(x == 'total2') {
+		var soma = 0;
+	     for(let i = 0; i < dbT.length; i++) {
+		 soma += dbT[i];
+	    }
+	 	if(soma > 0) {
+	     nodelist[l].innerHTML = soma;
+	    }
+    }
+
+	 
+	 
+
+ 
+ 
+ 
+}
+ /*=============totais urdume===================*/
+  totais('total1', 'tear 01 ', 1);
+  totais('total1', 'tear 02 ', 3);
+  totais('total1', 'tear 03 ', 5);
+  totais('total1', 'tear 04 ', 7);
+  totais('total1', 'tear 05 ', 9);
+  totais('total1', 'tear 06 ', 11);
+  totais('total1', 'tear 07 ', 13);
+  totais('total1', 'tear 08 ', 15);
+  totais('total1', 'tear 09 ', 17);
+  totais('total1', 'tear 10 ', 19);
+  totais('total1', 'tear 11 ', 21);
+  totais('total1', 'tear 12 ', 23);
+  
+   /*=============totais trama===================*/
+  totais('total2', 'tear 01 ', 1);
+  totais('total2', 'tear 02 ', 3);
+  totais('total2', 'tear 03 ', 5);
+  totais('total2', 'tear 04 ', 7);
+  totais('total2', 'tear 05 ', 9);
+  totais('total2', 'tear 06 ', 11);
+  totais('total2', 'tear 07 ', 13);
+  totais('total2', 'tear 08 ', 15);
+  totais('total2', 'tear 09 ', 17);
+  totais('total2', 'tear 10 ', 19);
+  totais('total2', 'tear 11 ', 21);
+  totais('total2', 'tear 12 ', 23);
+  
+  
+  
+  
+  /*======DEFEITOS DE URDUME======*/
+  result('fio-colado');
+  result('ponta');
+  result('roloEmb');
+  result('fio-fioLd');
+  result('fio-fioLe');
+  result('fio-fioMeio');
+  result('carritel');
+  result('fioBam');
+  result('slub');
+  result('bucha');
+  result('outros');
+  result('fioGro');
+  
+  /*======DEFEITOS DE TRAMA======*/
+  result('noTrama');
+  result('tramaFra');
+  result('defBom');
+  result('coniVazio');
+  result('quebraCala');
+  result('aliA');
+  result('aliB');
+  result('slubTram');
+  result('voltTrama');
+  result('outrosTram');
+  
+function imprimir() {
+ window.print()
+}
+ 
+</script>
+</body>
+</html>

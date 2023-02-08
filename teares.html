@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, user-scalable=no" >
+ 
+  <title>meuApp</title>
+ 
+<!-- <link href="../styles/pagina-do-editor.css" rel="stylesheet"/> -->
+<style>
+ * {margin: 0; padding: 0}
+  
+    body {
+	background-color: #363636;
+	}
+	
+	#flexContainer {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	border: 1px solid lime;
+    }
+	
+	#titulo {
+	 border: 1px solid red;
+	 height: 50px;
+	 width: 100%;
+	 margin: 10px;
+	}
+	
+	.formInicio {
+	 display: flex;
+	 justify-content: center;
+	 align-items: center;
+	 border: 1px solid red;
+	 height: 100px;
+	 width: 100%;
+	 margin: 10px;
+	}
+	
+	.formInicio input {
+	 width: 50px;
+	 border: 1px solid red;
+	 
+	}
+	
+	.formInicio label {
+	 width: 50px;
+	 border: 1px solid red;
+	 margin: 10px 0px 30px 20px;
+	}
+	
+	.navInicio {
+	 display: flex;
+	 flex-direction: column;
+	 flex-wrap:wrap;
+	 justify-content: center;
+	 align-items: center;
+	 border: 1px solid red;
+	 height: 450px;
+	 width: 100%;
+	}
+	
+	.navInicio a {
+	 display: flex;
+	 justify-content: center;
+	 align-items: center;
+     background-color: lime;
+	 border-radius: 5px;
+	 margin: 10px;
+	 height: 50px;
+	 width: 80px;
+	}
+	
+	.navInicio2 {
+	 display: flex;
+	 flex: 1;
+	 justify-content: center;
+	 align-items: center;
+	 border: 1px solid red;
+	 height: 50px;
+	 width: 100%;
+	}
+	
+	.navInicio2 a {
+     background-color: lime;
+	 border-radius: 5px;
+	 margin: 10px;
+	}
+	
+</style>
+
+</head>
+<body id="flexContainer">
+ <div id="titulo">SELECIONE O TEAR</div>
+
+<div class="navInicio">
+	<a onclick="state(0, 1)">01</a>
+	<a onclick="state(1, 2)">02</a>
+	<a onclick="state(2, 3)">03</a>
+	<a onclick="state(3, 4)">04</a>
+	<a onclick="state(4, 5)">05</a>
+	<a onclick="state(5, 6)">06</a>
+	<a onclick="state(6, 7)">07</a>
+	<a onclick="state(7, 8)">08</a>
+	<a onclick="state(8, 9)">09</a>
+	<a onclick="state(9, 10)">10</a>
+	<a onclick="state(10, 11)">11</a>
+	<a onclick="state(11, 12)">12</a>
+</div>
+
+<div class="navInicio2">
+ <a>HOME</a>
+ <a>INICIAR</a>
+</div>
+
+
+
+<script>
+const log = console.log;
+  
+ let grupo = localStorage.getItem('grupo');
+ let desc = document.querySelectorAll('a');
+
+switch(grupo) {
+ case '1':
+  desc[0].innerHTML = '1'; desc[1].innerHTML = '2'; desc [2 ].innerHTML = '3'; desc [3 ].innerHTML = '4';
+  desc[4].innerHTML = '5'; desc[5].innerHTML = '6'; desc [6 ].innerHTML = '7'; desc [7 ].innerHTML = '8';
+  desc[8].innerHTML = '9'; desc[9].innerHTML = '10'; desc[10].innerHTML = '11'; desc[11].innerHTML = '12';
+  break;
+ case '2':
+  desc[0].innerHTML = '13'; desc[1].innerHTML = '14'; desc[2 ].innerHTML = '15'; desc[3 ].innerHTML = '16';
+  desc[4].innerHTML = '17'; desc[5].innerHTML = '18'; desc[6 ].innerHTML = '19'; desc[7 ].innerHTML = '20';
+  desc[8].innerHTML = '21'; desc[9].innerHTML = '22'; desc[10].innerHTML = '23'; desc[11].innerHTML = '24';
+  break;
+ case '3':
+  desc[0].innerHTML = '25'; desc[1].innerHTML = '26'; desc[2 ].innerHTML = '27'; desc[3 ].innerHTML = '28';
+  desc[4].innerHTML = '29'; desc[5].innerHTML = '30'; desc[6 ].innerHTML = '31'; desc[7 ].innerHTML = '32';
+  desc[8].innerHTML = '33'; desc[9].innerHTML = '34'; desc[10].innerHTML = '35'; desc[11].innerHTML = '36';
+  break;
+ case '4':
+  desc[0].innerHTML = '37'; desc[1].innerHTML = '38'; desc[2 ].innerHTML = '39'; desc[3 ].innerHTML = '40';
+  desc[4].innerHTML = '41'; desc[5].innerHTML = '42'; desc[6 ].innerHTML = '43'; desc[7 ].innerHTML = '44';
+  desc[8].innerHTML = '45'; desc[9].innerHTML = '46'; desc[10].innerHTML = '47'; desc[11].innerHTML = '48';
+  break;
+ case '5':
+  desc[0].innerHTML = '49'; desc[1].innerHTML = '50'; desc[2 ].innerHTML = '51'; desc[3 ].innerHTML = '52';
+  desc[4].innerHTML = '53'; desc[5].innerHTML = '54'; desc[6 ].innerHTML = '55'; desc[7 ].innerHTML = '56';
+  desc[8].innerHTML = '57'; desc[9].innerHTML = '58'; desc[10].innerHTML = '59'; desc[11].innerHTML = '60';
+  break;
+ case '6':
+  desc[0].innerHTML = '61'; desc[1].innerHTML = '62'; desc[2 ].innerHTML = '63'; desc[3 ].innerHTML = '64';
+  desc[4].innerHTML = '65'; desc[5].innerHTML = '66'; desc[6 ].innerHTML = '67'; desc[7 ].innerHTML = '68';
+  desc[8].innerHTML = '69'; desc[9].innerHTML = '70'; desc[10].innerHTML = '71'; desc[11].innerHTML = '72';
+  break;
+ case '7':
+  desc[0].innerHTML = '73'; desc[1].innerHTML = '74'; desc[2 ].innerHTML = '75'; desc[3 ].innerHTML = '76';
+  desc[4].innerHTML = '77'; desc[5].innerHTML = '78'; desc[6 ].innerHTML = '79'; desc[7 ].innerHTML = '80';
+  desc[8].innerHTML = '81'; desc[9].innerHTML = '82'; desc[10].innerHTML = '83'; desc[11].innerHTML = '84';
+  break;
+ case '8':
+  desc[0].innerHTML = '85'; desc[1].innerHTML = '86'; desc[2].innerHTML = '87'; desc[3].innerHTML = '88';
+  desc[4].innerHTML = '89'; 
+  break;
+ 
+  default:
+  log("error")
+}
+ 
+
+ 
+ function state(position, value) {
+     var get = document.querySelectorAll('a')[position];
+	 var post = localStorage.setItem('tear clicavel', value);
+	 
+	 location.href="./ocorrencia.html"
+	 
+	 log(localStorage.getItem('tear clicavel'));
+ }
+ 
+ 
+ 
+ 
+
+</script>
+</body>
+</html> 
+
+

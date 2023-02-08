@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, user-scalable=no" >
+ 
+  <title>meuApp</title>
+
+<!-- <link href="../styles/pagina-do-editor.css" rel="stylesheet"/> -->
+<style>
+ * {margin: 0; padding: 0}
+  
+    body {
+	background-color: #363636;
+	}
+	
+	#flexContainer {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	border: 1px solid lime;
+    }
+	
+	#titulo {
+	 border: 1px solid red;
+	 height: 50px;
+	 width: 100%;
+	 margin: 10px;
+	}
+	
+	.formInicio {
+	 display: flex;
+	 justify-content: center;
+	 align-items: center;
+	 border: 1px solid red;
+	 height: 100px;
+	 width: 100%;
+	 margin: 10px;
+	}
+	
+	.formInicio input {
+	 width: 50px;
+	 border: 1px solid red;
+	 
+	}
+	
+	.formInicio label {
+	 width: 50px;
+	 border: 1px solid red;
+	 margin: 10px 0px 30px 20px;
+	}
+	
+	.navInicio {
+	 display: flex;
+	 flex: 1;
+	 justify-content: center;
+	 align-items: center;
+	 border: 1px solid red;
+	 height: 150px;
+	 width: 100%;
+	}
+	
+	.navInicio a {
+     background-color: lime;
+	 border-radius: 5px;
+	 margin: 10px;
+	}
+	
+	.navInicio2 {
+	 display: flex;
+	 flex: 1;
+	 justify-content: center;
+	 align-items: center;
+	 border: 1px solid red;
+	 height: 100px;
+	 width: 100%;
+	}
+	
+	.navInicio2 a {
+     background-color: lime;
+	 border-radius: 5px;
+	 margin: 10px;
+	}
+	
+</style>
+
+</head>
+<body id="flexContainer">
+ <div id="titulo">TESTE DE RUPTURA</div>
+ 
+    <form class="formInicio">
+	    <div>
+		 <label>INICIO</label>
+		 <input type="text" id="start" />
+		 <label>FIM</label>
+		 <input type="text" id="end" />
+	    </div>
+
+		<div>
+		 <label>Nº DO GRUPO</label>
+		 <input  type="number" id="nGroup" value="3"/>
+		 <label>T/TOTAL</label>
+		 <input type="number" id="total" />
+	    </div>
+    </form>
+
+<div class="navInicio">
+ <a href="file:///storage/emulated/0/Download/teste51/inicio-fim.html">PONTOS INICIAIS</a>
+ 
+ <!-- file:///C:/Users/kledisom.oliveira/Desktop/projetos/area%2051/inicio-fim.html -->
+ <a>PONTOS FINAIS</a>
+ <a href="rpm-artigo.html">INSERIR ARTIGOS</a>
+ <a>INSERIR RPM</a>
+</div>
+
+<div class="navInicio2">
+ <a onclick="saveInitial()" >SET ...</a>
+ <a href="./teares.html">INICIAR</a>
+ <a href="./relatorio01.html">rel01</a>
+ <a href="./relatorio02.html">rel02</a>
+</div>
+
+<script>
+
+var start = document.getElementById('start');
+var end = document.getElementById('end');
+var nGroup = document.getElementById('nGroup');
+var total = document.getElementById('total');
+
+console.log(nGroup.value)
+
+function saveInitial() { 
+ localStorage.setItem('inicio', start.value);	
+ localStorage.setItem('fim', end.value);	
+ localStorage.setItem('grupo', nGroup.value);	
+ localStorage.setItem('total', total.value);	
+ 
+ alert('salvo!')
+}
+
+document.getElementById('start').value = localStorage.getItem('inicio');
+document.getElementById('end').value = localStorage.getItem('fim');
+document.getElementById('total').value = localStorage.getItem('total');
+
+ 
+</script>
+ 
+
+</body>
+</html> 
+
+

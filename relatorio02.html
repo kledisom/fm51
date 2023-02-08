@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, user-scalable=no" >
+ 
+  <title>meuApp</title>
+
+<!-- <link href="../styles/pagina-do-editor.css" rel="stylesheet"/> -->
+<style>
+ * {margin: 0; padding: 0}
+  
+    body {
+	background-color: #363636;
+	font-size: 10px;
+	color: #fff;
+	}
+	
+	table {
+	 text-align: center;
+	 border-collapse: collapse;
+	 border: 1px solid #000;
+	 width: 95%
+	}
+	
+	<!-- #nTear, #nArt { -->
+		<!-- background-color: blue; -->
+		<!-- height: 17px; -->
+	<!-- } -->
+	
+	<!-- #urdume, #trama, #dme { -->
+        <!-- background-color: violet; -->
+		<!-- height: 15px; -->
+		<!-- font-size: 11px; -->
+
+	<!-- } -->
+	
+		<!-- #resumo td { -->
+	     <!-- background-color: violet; -->
+		 <!-- height: 15px; -->
+		 <!-- font-size: 11px; -->
+	<!-- } -->
+	
+	
+	<!-- #resumo td:nth-child(2) { -->
+	     <!-- background-color: violet; -->
+		 <!-- height: 15px; -->
+		 <!-- font-size: 11px; -->
+		 <!-- text-align: left; -->
+	<!-- } -->
+	
+		<!-- #resumo td:nth-child(3) { -->
+	     <!-- background-color: violet; -->
+		 <!-- height: 15px; -->
+		 <!-- font-size: 11px; -->
+		 <!-- text-align: left; -->
+	<!-- } -->
+	
+	<!-- table td { -->
+	 <!-- width: 300px; -->
+	<!-- } -->
+	
+	<!-- .ocorrencia { -->
+		<!-- background-color: violet; -->
+		<!-- height: 5px; -->
+	    <!-- width: 1000px; -->
+		<!-- text-align: left; -->
+	<!-- } -->
+
+    a {
+	 height: 100px;
+	 width: 100px;
+	 border: 1px solid lime;
+	 background-color: violet;
+	 margin: 50px;
+	  font-size: 20px;
+	}
+	
+</style>
+
+</head>
+<body id="flexContainer">
+ 
+    <table border="1">
+       <thead>
+        <tr></tr>
+       </thead>
+       <tbody id="selecao">
+		 <tr>
+			 <td colspan='2' id="date">DATA:</td>
+			 <td colspan='2' id="start">INICIO:</td>
+			 <td colspan='2'id="end">FIM:</td>
+			 <td colspan='2' id="time">TEMPO/TOTAL:</td>
+		 </tr>
+		 <tr><th>&nbsp;</th><tr>
+		 <tr>
+			 <td>Nº do TEAR</td>
+			 <td>ARTIGO</td>
+			 <td>RPM/TEAR</td>
+			 <td>100% T.PROVA</td>
+			 <td>INICIO</td>
+			 <td>TERMINO</td>
+			 <td>PONTOS DURANTE</td>
+			 <td>% EFICIENCIA</td>
+			 <td style="width: 400px">OBSERVAÇÃO</td>
+			 
+		 </tr>
+		 <tr class="teares">
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+		 </tr>
+		 <tr>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+		 </tr>
+		 <tr>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+		 </tr>
+		 <tr>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+		 </tr>
+		 <tr>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+		 </tr>
+		 <tr>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+		 </tr>
+		 <tr>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+		 </tr><tr>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+		 </tr>
+		 <tr>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+		 </tr>
+		 <tr>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+		 </tr>
+		 <tr>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+		 </tr>
+		 <tr>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+		 </tr>
+		 <tr>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+		 </tr>
+		 <tr>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+		 </tr>
+		 <tr>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+		 </tr>
+		 <tr>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+		 </tr>
+		 <tr>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+		 </tr>
+		 <tr>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+		 </tr>
+		 <tr>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+		 </tr>
+		 <tr>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+		 </tr>
+		 <tr>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+		 </tr>
+		 <tr>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+			 <td>0</td>
+		 </tr>
+		
+		 
+	   </tbody>
+
+    </table>
+
+
+<a href="index.html">back</a>
+<button onclick="imprimir()">print</button>
+
+
+<script>
+var nodelist = document.querySelectorAll('td');
+	for (let i = 13; i < nodelist.length; i++){
+	  nodelist[i].innerHTML = '&nbsp;'
+	};
+
+//distribuir numeros dos teares	
+ let grupo = localStorage.getItem('grupo');
+ let desc = document.querySelectorAll('td');
+ 
+ function definirTeares(param) {
+	 let i = 5;
+	 let u = param;
+	 let limit = param + 12;
+		
+	 for( i && u;  i < 17 && u < limit; i++ && u++) {
+		 //desc[i].innerHTML = u;
+		 document.querySelectorAll('tr')[i].children[0].innerHTML = u;
+		};
+	};
+
+switch(grupo) {
+ case '1':
+  definirTeares(1);
+  break;
+ case '2':
+	definirTeares(13);
+  break;
+ case '3':
+	definirTeares(25);
+  break;
+ case '4':
+	definirTeares(37);
+  break;
+ case '5':
+	definirTeares(49);
+  break;
+ case '6':
+	definirTeares(61);
+  break;
+ case '7':
+	definirTeares(73);
+  break;
+ case '8':
+  desc[0].innerHTML = '85'; desc[1].innerHTML = '86'; desc[2].innerHTML = '87'; desc[3].innerHTML = '88';
+  desc[4].innerHTML = '89'; 
+  break;
+ 
+  default:
+  log("error")
+};
+	 var tempoTotal = localStorage.getItem('total');
+	 var obj = JSON.parse(localStorage.getItem('inicioBD'));
+     let i = 5;
+	 let count = 0;
+		
+	 const newArray = [];
+	 const newArrayPoints = [];
+	 const newArrayPercent = [];
+	 
+	 for(i && count; i < 17 && count < 12; i++ && count++) {
+		 let artigos = localStorage.getItem('art' + count);
+		 let rpm = localStorage.getItem('rpm' + count);
+			
+		 document.querySelectorAll('tr')[i].children[1].innerHTML = artigos;
+		 document.querySelectorAll('tr')[i].children[2].innerHTML = rpm;
+		 
+		 document.querySelectorAll('tr')[i].children[3].innerHTML = (rpm*tempoTotal);
+		 
+		 document.querySelectorAll('tr')[i].children[4].innerHTML = obj.inicio[count];
+
+		 document.querySelectorAll('tr')[i].children[5].innerHTML = obj.fim[count];
+		 
+		 document.querySelectorAll('tr')[i].children[6].innerHTML = (obj.fim[count] - obj.inicio[count]) + '00';
+		 
+		 let percent = ((obj.fim[count]-obj.inicio[count]) + '00') / (rpm*tempoTotal)*100;
+		 if(percent > 0) {
+			document.querySelectorAll('tr')[i].children[7].innerHTML = parseFloat(percent).toFixed(1) + '%';
+		 };
+		 
+		 
+		 //bloco para somar coluna do tempo prova
+		 let el = parseFloat(document.querySelectorAll('tr')[i].children[3].innerText);
+		
+		 newArray.push(el);
+		 
+		 if(count == 11) {
+			  var total = newArray.reduce((total, numero) => total + numero, 0);
+			  document.querySelectorAll('tr')[18].children[3].innerHTML = total;
+		 };
+		 
+		 //bloco para somar coluna dos pontos durante
+		 let points = parseFloat(document.querySelectorAll('tr')[i].children[6].innerText);
+		
+		 newArrayPoints.push(points);
+		 
+		 if(count == 11) {
+			  var total = newArrayPoints.reduce((total, numero) => total + numero, 0);
+				document.querySelectorAll('tr')[18].children[6].innerHTML = total;
+		 };
+		 
+			
+		 //bloco para somar coluna das eficiencias
+		 let efic = parseFloat(document.querySelectorAll('tr')[i].children[7].innerText);
+		 if(percent > 0) {
+			 newArrayPercent.push(efic);
+		 };
+		 		 
+		 if(count == 11) {
+			  var total = newArrayPercent.reduce((total, numero) => total + numero, 0);
+			  document.querySelectorAll('tr')[18].children[7].innerHTML = (total/newArrayPercent.length).toFixed(1);
+		 };
+		 
+		 
+		};
+		
+		document.getElementById('time').innerHTML = 'TEMPO/TOTAL: ' + localStorage.getItem('total');
+		
+		document.getElementById('start').innerHTML = 'INICIO: ' + localStorage.getItem('inicio');
+		
+		document.getElementById('end').innerHTML = 'FIM: ' + localStorage.getItem('fim');
+		
+		let day = new Date().getDate();
+		let month = new Date().getMonth() + 1;
+		let year = new Date().getFullYear();
+		
+		document.getElementById('date').innerHTML = 'DATA: ' + day + '/' + month + '/' + year;
+		
+		function imprimir() {
+			window.print()
+		}
+ 
+		
+		
+		
+		
+</script>
+</body>
+</html>

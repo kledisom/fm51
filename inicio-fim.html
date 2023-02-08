@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, user-scalable=no" >
+ 
+  <title>meuApp</title>
+
+<!-- <link href="../styles/pagina-do-editor.css" rel="stylesheet"/> -->
+<style>
+ * {margin: 0; padding: 0}
+  
+    body {
+	background-color: #363636;
+	}
+	
+	#flexContainer {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	border: 1px solid lime;
+    }
+	
+	#titulo {
+	 border: 1px solid red;
+	 height: 50px;
+	 width: 100%;
+	 margin: 10px;
+	}
+	
+	.formInicio {
+	 display: flex;
+	 flex-direction: column;
+	 justify-content: center;
+	 align-items: center;
+	 border: 1px solid red;
+	 //height: 100px;
+	 width: 100%;
+	 margin: 10px;
+	}
+	
+	.formInicio p {
+	 margin-top: 20px;
+	 font-size: 1.3rem;
+	}
+	
+	.formInicio input {
+	 width: 100px;
+	 height: 40px;
+	 border: 1px solid red;
+	 margin-right: 10px;
+	 
+	 text-align: center;
+	 
+	}
+	
+	.formInicio label {
+	 height: 100px;
+	 width: 100px;
+	 font-size: 15px;
+	 border: 1px solid lime;
+	}
+	
+	
+	.navInicio2 {
+	 display: flex;
+	 flex: 1;
+	 justify-content: center;
+	 align-items: center;
+	 border: 1px solid red;
+	 height: 100px;
+	 width: 100%;
+	}
+	
+	.navInicio2 a {
+     background-color: lime;
+	 border-radius: 5px;
+	 margin: 10px;
+	}
+	
+</style>
+
+</head>
+<body id="flexContainer">
+ <div id="titulo">PONTOS INICIAIS E FINAIS</div>
+ 
+    <form class="formInicio">
+		<div class="forms">
+		<p>TEAR 01</p>
+		<input name='INI' placeholder="INICIO"/>
+		<input name='FIM' placeholder="FIM"/>
+		</div>
+
+		<div>
+		<p>TEAR 02</p>
+		<input name='INI' placeholder="INICIO"/>
+		<input name='FIM' placeholder="FIM"/>
+		</div>
+
+		<div>
+		<p>TEAR 03</p>
+		<input name='INI' placeholder="INICIO"/>
+		<input name='FIM' placeholder="FIM"/>
+		</div>
+
+		<div>
+		<p>TEAR 04</p>
+		<input name='INI' placeholder="INICIO"/>
+		<input name='FIM' placeholder="FIM"/>
+		</div>
+
+		<div>
+		<p>TEAR 05</p>
+		<input name='INI' placeholder="INICIO"/>
+		<input name='FIM' placeholder="FIM"/>
+		</div>
+
+		<div>
+		<p>TEAR 06</p>
+		<input name='INI' placeholder="INICIO"/>
+		<input name='FIM' placeholder="FIM"/>
+		</div>
+
+		<div>
+		<p>TEAR 07</p>
+		<input name='INI' placeholder="INICIO"/>
+		<input name='FIM' placeholder="FIM"/>
+		</div>
+
+		<div>
+		<p>TEAR 08</p>
+		<input name='INI' placeholder="INICIO"/>
+		<input name='FIM' placeholder="FIM"/>
+		</div>
+		
+		<div>
+		<p>TEAR 09</p>
+		<input name='INI' placeholder="INICIO"/>
+		<input name='FIM' placeholder="FIM"/>
+		</div>
+
+		<div>
+		<p>TEAR 10</p>
+		<input name='INI' placeholder="INICIO"/>
+		<input name='FIM' placeholder="FIM"/>
+		</div>
+
+		<div>
+		<p>TEAR 11</p>
+		<input name='INI' placeholder="INICIO"/>
+		<input name='FIM' placeholder="FIM"/>
+		</div>
+
+		<div>
+		<p>TEAR 12</p>
+		<input name='INI' placeholder="INICIO"/>
+		<input name='FIM' placeholder="FIM"/>
+		</div>		
+
+    </form>
+
+
+<div class="navInicio2">
+ <a href="index.html">HOME</a>
+ <a onclick="save()">SALVAR</a>
+</div>
+
+<script>
+ 
+ let grupo = localStorage.getItem('grupo');
+ let desc = document.querySelectorAll('p');
+
+switch(grupo) {
+ case '1':
+  desc[0].innerHTML = 'TEAR 1'; desc[1].innerHTML = 'TEAR 2'; desc [2 ].innerHTML = 'TEAR 3'; desc [3 ].innerHTML = 'TEAR 4';
+  desc[4].innerHTML = 'TEAR 5'; desc[5].innerHTML = 'TEAR 6'; desc [6 ].innerHTML = 'TEAR 7'; desc [7 ].innerHTML = 'TEAR 8';
+  desc[8].innerHTML = 'TEAR 9'; desc[9].innerHTML = 'TEAR 10'; desc[10].innerHTML = 'TEAR 11'; desc[11].innerHTML = 'TEAR 12';
+  break;
+ case '2':
+  desc[0].innerHTML = 'TEAR 13'; desc[1].innerHTML = 'TEAR 14'; desc[2 ].innerHTML = 'TEAR 15'; desc[3 ].innerHTML = 'TEAR 16';
+  desc[4].innerHTML = 'TEAR 17'; desc[5].innerHTML = 'TEAR 18'; desc[6 ].innerHTML = 'TEAR 19'; desc[7 ].innerHTML = 'TEAR 20';
+  desc[8].innerHTML = 'TEAR 21'; desc[9].innerHTML = 'TEAR 22'; desc[10].innerHTML = 'TEAR 23'; desc[11].innerHTML = 'TEAR 24';
+  break;
+ case '3':
+  desc[0].innerHTML = 'TEAR 25'; desc[1].innerHTML = 'TEAR 26'; desc[2 ].innerHTML = 'TEAR 27'; desc[3 ].innerHTML = 'TEAR 28';
+  desc[4].innerHTML = 'TEAR 29'; desc[5].innerHTML = 'TEAR 30'; desc[6 ].innerHTML = 'TEAR 31'; desc[7 ].innerHTML = 'TEAR 32';
+  desc[8].innerHTML = 'TEAR 33'; desc[9].innerHTML = 'TEAR 34'; desc[10].innerHTML = 'TEAR 35'; desc[11].innerHTML = 'TEAR 36';
+  break;
+ case '4':
+  desc[0].innerHTML = 'TEAR 37'; desc[1].innerHTML = 'TEAR 38'; desc[2 ].innerHTML = 'TEAR 39'; desc[3 ].innerHTML = 'TEAR 40';
+  desc[4].innerHTML = 'TEAR 41'; desc[5].innerHTML = 'TEAR 42'; desc[6 ].innerHTML = 'TEAR 43'; desc[7 ].innerHTML = 'TEAR 44';
+  desc[8].innerHTML = 'TEAR 45'; desc[9].innerHTML = 'TEAR 46'; desc[10].innerHTML = 'TEAR 47'; desc[11].innerHTML = 'TEAR 48';
+  break;
+ case '5':
+  desc[0].innerHTML = 'TEAR 49'; desc[1].innerHTML = 'TEAR 50'; desc[2 ].innerHTML = 'TEAR 51'; desc[3 ].innerHTML = 'TEAR 52';
+  desc[4].innerHTML = 'TEAR 53'; desc[5].innerHTML = 'TEAR 54'; desc[6 ].innerHTML = 'TEAR 55'; desc[7 ].innerHTML = 'TEAR 56';
+  desc[8].innerHTML = 'TEAR 57'; desc[9].innerHTML = 'TEAR 58'; desc[10].innerHTML = 'TEAR 59'; desc[11].innerHTML = 'TEAR 60';
+  break;
+ case '6':
+  desc[0].innerHTML = 'TEAR 61'; desc[1].innerHTML = 'TEAR 62'; desc[2 ].innerHTML = 'TEAR 63'; desc[3 ].innerHTML = 'TEAR 64';
+  desc[4].innerHTML = 'TEAR 65'; desc[5].innerHTML = 'TEAR 66'; desc[6 ].innerHTML = 'TEAR 67'; desc[7 ].innerHTML = 'TEAR 68';
+  desc[8].innerHTML = 'TEAR 69'; desc[9].innerHTML = 'TEAR 70'; desc[10].innerHTML = 'TEAR 71'; desc[11].innerHTML = 'TEAR 72';
+  break;
+ case '7':
+  desc[0].innerHTML = 'TEAR 73'; desc[1].innerHTML = 'TEAR 74'; desc[2 ].innerHTML = 'TEAR 75'; desc[3 ].innerHTML = 'TEAR 76';
+  desc[4].innerHTML = 'TEAR 77'; desc[5].innerHTML = 'TEAR 78'; desc[6 ].innerHTML = 'TEAR 79'; desc[7 ].innerHTML = 'TEAR 80';
+  desc[8].innerHTML = 'TEAR 81'; desc[9].innerHTML = 'TEAR 82'; desc[10].innerHTML = 'TEAR 83'; desc[11].innerHTML = 'TEAR 84';
+  break;
+ case '8':
+  desc[0].innerHTML = 'TEAR 85'; desc[1].innerHTML = 'TEAR 86'; desc[2].innerHTML = 'TEAR 87'; desc[3].innerHTML = 'TEAR 88';
+  desc[4].innerHTML = 'TEAR 89'; 
+  break;
+ 
+  default:
+  log("error")
+}
+ 
+ const get = document.querySelectorAll('input'); 
+ const getINI = document.querySelectorAll('[name="INI"]'); 
+ const getFIM = document.querySelectorAll('[name="FIM"]'); 
+ 
+ function save() {
+ 
+	 var inicioBD = {
+		  inicio: [
+				get[0].value,
+				get[2].value,
+				get[4].value,
+				get[6].value,
+				get[8].value,
+				get[10].value,
+				get[12].value,
+				get[14].value,
+				get[16].value,
+				get[18].value,
+				get[20].value,
+				get[22].value,
+			],
+	 
+			fim: [
+				get[1].value,
+				get[3].value,
+				get[5].value,
+				get[7].value,
+				get[9].value,
+				get[11].value,
+				get[13].value,
+				get[15].value,
+				get[17].value,
+				get[19].value,
+				get[21].value,
+				get[23].value,
+			],
+		};
+
+		localStorage.setItem('inicioBD', JSON.stringify(inicioBD))
+		confirm('Você deseja salvar esses dados?')
+    };
+	
+	var obj = JSON.parse(localStorage.getItem('inicioBD'));
+	
+	for(let i = 0; i < 12; i++) {
+		getINI[i].value = obj.inicio[i];
+		getFIM[i].value = obj.fim[i];
+	};
+	
+	
+	
+</script>
+ 
+
+</body>
+</html> 
+
+

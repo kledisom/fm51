@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, user-scalable=no" >
+ 
+  <title>meuApp</title>
+
+<!-- <link href="../styles/pagina-do-editor.css" rel="stylesheet"/> -->
+<style>
+ * {margin: 0; padding: 0}
+  
+    body {
+	background-color: #363636;
+	}
+	
+	#flexContainer {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	border: 1px solid lime;
+    }
+	
+	#titulo {
+	 border: 1px solid red;
+	 height: 50px;
+	 width: 100%;
+	 margin: 10px;
+	}
+	
+	#formInicio {
+	 display: flex;
+	 flex-direction: row;
+	 border: 1px solid red;
+	 height: 450px;
+	 width: 100%;
+	 margin: 10px;
+	 background-color: violet;
+	}
+	
+	#formInicio label {
+	 width: 100px;
+	 margin: 0px 5px 0px 20px;
+	}
+	
+	#formInicio2 {
+	 display: flex;
+	 flex-direction: row;
+	 border: 1px solid red;
+	 height: 450px;
+	 width: 100%;
+	 margin: 10px;
+	 background-color: blue;
+	}
+	
+	.ocor input {
+	width: 50px;
+	height: 20px;
+	background-color: #fff;
+
+	}
+	
+	<!-- #display10, #display20, #display30, -->
+    <!-- #display40, #display50, #display60, -->
+	<!-- #display70, #display80, #display90, -->
+	<!-- #display100 -->
+	<!-- { -->
+	 <!-- width: 50px; -->
+	 <!-- height: 20px; -->
+	 <!-- background-color: #fff; -->
+	 
+	<!-- } -->
+	
+	#formInicio label {
+	 width: 150px;
+	 margin: 0px 5px 0px 20px;
+	}
+
+	#formInicio2 label {
+	 width: 160px;
+	 margin: 0px 5px 0px 20px;
+	}
+
+	
+	.btn {
+	 width: 20px;
+	}
+	
+	.ocor {
+	 border: 1px solid blue;
+	 display: flex;
+	 align-items: center;
+	}
+	
+	
+	
+</style>
+
+</head>
+<body id="flexContainer">
+ <div id="titulo">SELECIONE O TEAR</div>
+
+    <form id="formInicio">
+	    <div class="ocor">
+		 <label>FIO COLADO</label>
+		 <input id="display1" value="0"></input>
+		 <!-- <input name="mais" id="btn" type="button" value="+"  /> -->
+	    </div>
+
+		<div class="ocor">
+		 <label>SUB. PONTA DE FIO</label>
+		 <input id="display2" value="0"></input>
+		 <!-- <input name="mais" class="btn" type="button" value="+" onClick="sum()" /> -->
+	    </div>
+
+		<div class="ocor">
+		 <label>ROLO EMB.</label>
+		 <input id="display3" value="0"></input>
+		 <!-- <input name="mais" class="btn" type="button" value="+" onClick="sum()" /> -->
+	    </div>
+
+		<div class="ocor">
+		 <label>FIO FRACO L/D</label>
+		 <input id="display4" value="0"></input>
+		 <!-- <input name="mais" class="btn" type="button" value="+" onClick="sum()" /> -->
+	    </div>
+
+		<div class="ocor">
+		 <label>FIO FRACO L/E</label>
+		 <input id="display5" value="0"></input>
+		 <!-- <input name="mais" class="btn" type="button" value="+" onClick="sum()" /> -->
+	    </div>
+
+		<div class="ocor">
+		 <label>FIO FRACO - MEIO</label>
+		 <input id="display6" value="0"></input>
+		 <!-- <input name="mais" class="btn" type="button" value="+" onClick="sum()" /> -->
+	    </div>
+
+		<div class="ocor">
+		 <label>CARRITEL</label>
+		 <input id="display7" value="0"></input>
+		 <!-- <input name="mais" class="btn" type="button" value="+" onClick="sum()" /> -->
+	    </div>
+
+		<div class="ocor">
+		 <label>FIO BAMBO</label>
+		 <input id="display8" value="0"></input>
+		 <!-- <input name="mais" class="btn" type="button" value="+" onClick="sum()" /> -->
+	    </div>
+
+		<div class="ocor">
+		 <label>SLUB</label>
+		 <input id="display9" value="0"></input>
+		 <!-- <input name="mais" class="btn" type="button" value="+" onClick="sum()" /> -->
+	    </div>
+
+		<div class="ocor">
+		 <label>BUCHA</label>
+		 <input id="display10" value="0"></input>
+		 <!-- <input name="mais" class="btn" type="button" value="+" onClick="sum()" /> -->
+	    </div>
+
+		<div class="ocor">
+		 <label>OUTROS</label>
+		 <input id="display11" value="0"></input>
+		 <!-- <input name="mais" class="btn" type="button" value="+" onClick="sum()" /> -->
+	    </div>	
+
+		<div class="ocor">
+		 <label>FIO GROSSO</label>
+		 <input id="display12" value="0"></input>
+		 <!-- <input name="mais" class="btn" type="button" value="+" onClick="sum()" /> -->
+	    </div>			
+    </form>
+	
+	    <form id="formInicio2">
+	    <div class="ocor">
+		 <label>NÓ NA TRAMA</label>
+		 <input id="display101" value="0"></input>
+		 <!-- <input name="mais" id="btn" type="button" value="+"  /> -->
+	    </div>
+
+		<div class="ocor">
+		 <label>TRAMA FRACA</label>
+		 <input id="display20" value="0"></input>
+		 <!-- <input name="mais" class="btn" type="button" value="+" onClick="sum()" /> -->
+	    </div>
+
+		<div class="ocor">
+		 <label>DEF. BOBINA</label>
+		 <input id="display30" value="0"></input>
+		 <!-- <input name="mais" class="btn" type="button" value="+" onClick="sum()" /> -->
+	    </div>
+
+		<div class="ocor">
+		 <label>CONICAL VAZIO</label>
+		 <input id="display40" value="0"></input>
+		 <!-- <input name="mais" class="btn" type="button" value="+" onClick="sum()" /> -->
+	    </div>
+
+		<div class="ocor">
+		 <label>QUEB. TRAMA CALA</label>
+		 <input id="display50" value="0"></input>
+		 <!-- <input name="mais" class="btn" type="button" value="+" onClick="sum()" /> -->
+	    </div>
+
+		<div class="ocor">
+		 <label>PRÉ-ALIMEN. A</label>
+		 <input id="display60" value="0"></input>
+		 <!-- <input name="mais" class="btn" type="button" value="+" onClick="sum()" /> -->
+	    </div>
+
+		<div class="ocor">
+		 <label>PRÉ-ALIMEN. B</label>
+		 <input id="display70" value="0"></input>
+		 <!-- <input name="mais" class="btn" type="button" value="+" onClick="sum()" /> -->
+	    </div>
+
+		<div class="ocor">
+		 <label>SLUB</label>
+		 <input id="display80" value="0"></input>
+		 <!-- <input name="mais" class="btn" type="button" value="+" onClick="sum()" /> -->
+	    </div>
+
+		<div class="ocor">
+		 <label>VOLTANDO TRAMA</label>
+		 <input id="display90" value="0"></input>
+		 <!-- <input name="mais" class="btn" type="button" value="+" onClick="sum()" /> -->
+	    </div>
+
+		<div class="ocor">
+		 <label>OUTROS</label>
+		 <input id="display100" value="0"></input>
+		 <!-- <input name="mais" class="btn" type="button" value="+" onClick="sum()" /> -->
+	    </div>
+		
+    </form>
+	
+
+<div class="navInicio2">
+ <a href="./teares.html">TEARES</a>
+ <a href="./index51.html">HOME</a>
+ <input type="button" id="" value="SALVAR" onClick="salvar()"></input>
+ 
+ <input type="button" value="URDUME" onClick="exibir()" />
+ <input type="button" value="TRAMA" onClick="ocultar()" />
+
+</div>
+
+<script src="script.js" ></script>
+ 
+
+</body>
+</html> 
+
+
