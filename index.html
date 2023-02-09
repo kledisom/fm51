@@ -22,10 +22,14 @@
     }
 	
 	#titulo {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	 border: 1px solid red;
 	 height: 50px;
 	 width: 100%;
 	 margin: 10px;
+	 color: #fff;
 	}
 	
 	.formInicio {
@@ -64,6 +68,8 @@
      background-color: lime;
 	 border-radius: 5px;
 	 margin: 10px;
+	 color: #000;
+	 text-decoration: none;
 	}
 	
 	.navInicio2 {
@@ -80,6 +86,9 @@
      background-color: lime;
 	 border-radius: 5px;
 	 margin: 10px;
+	 padding: 10px;
+	 color: #000;
+	 text-decoration: none;
 	}
 	
 </style>
@@ -108,14 +117,14 @@
  <a href="./inicio-fim.html">PONTOS INICIAIS</a>
  
  <!-- file:///C:/Users/kledisom.oliveira/Desktop/projetos/area%2051/inicio-fim.html -->
- <a>PONTOS FINAIS</a>
+ <a href="./inicio-fim.html">PONTOS FINAIS</a>
  <a href="rpm-artigo.html">INSERIR ARTIGOS</a>
  <a>INSERIR RPM</a>
 </div>
 
 <div class="navInicio2">
- <a onclick="saveInitial()" >SET ...</a>
- <a href="./teares.html">INICIAR</a>
+ <!-- <a  >SET ...</a> -->
+ <a href="./teares.html" onclick="saveInitial()">INICIAR</a>
  <a href="./relatorio01.html">rel01</a>
  <a href="./relatorio02.html">rel02</a>
 </div>

@@ -8,7 +8,7 @@
 
 <!-- <link href="../styles/pagina-do-editor.css" rel="stylesheet"/> -->
 <style>
- * {margin: 0; padding: 0}
+ * {margin: 0; padding: 0; box-sizing: border-box}
   
     body {
 	background-color: #363636;
@@ -19,13 +19,18 @@
 	flex-wrap: wrap;
 	justify-content: center;
 	border: 1px solid lime;
+	height: 100vh;
     }
 	
 	#titulo {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	 border: 1px solid red;
 	 height: 50px;
 	 width: 100%;
 	 margin: 10px;
+	 color: #fff;
 	}
 	
 	#formInicio {
@@ -92,6 +97,37 @@
 	 align-items: center;
 	}
 	
+	.btn-bottom a, .btn-bottom input {
+	  background-color: #fff;
+	  text-decoration: none;
+	  color: #000;
+	  padding: 10px;
+	  border: none;
+	  height: 38px;
+	}
+	
+	#msgSave {
+		color: #000;
+		font-size: 0px;
+		margin-left: 200px;
+		<!-- transition: margin-left 2s; -->
+		transition: font-size 5s;
+		transition-delay: 1s;
+	
+	}
+	
+		#msgSave2 {
+		color: #fff;
+		font-size: 0px;
+		margin-left: 200px;
+		<!-- transition: margin-left 2s; -->
+		transition: font-size 5s;
+		transition-delay: 1s;
+	
+	}
+	
+	
+	
 	
 	
 </style>
@@ -103,7 +139,7 @@
     <form id="formInicio">
 	    <div class="ocor">
 		 <label>FIO COLADO</label>
-		 <input id="display1" value="0"></input>
+		 <input id="display1" value=""></input>
 		 <!-- <input name="mais" id="btn" type="button" value="+"  /> -->
 	    </div>
 
@@ -171,7 +207,8 @@
 		 <label>FIO GROSSO</label>
 		 <input id="display12" value="0"></input>
 		 <!-- <input name="mais" class="btn" type="button" value="+" onClick="sum()" /> -->
-	    </div>			
+	    </div>	
+       <span id='msgSave'>salvo!</span>	
     </form>
 	
 	    <form id="formInicio2">
@@ -234,17 +271,18 @@
 		 <input id="display100" value="0"></input>
 		 <!-- <input name="mais" class="btn" type="button" value="+" onClick="sum()" /> -->
 	    </div>
-		
+		<span id='msgSave2'>salvo!</span>	
     </form>
 	
 
 <div class="navInicio2">
- <a href="./teares.html">TEARES</a>
- <a href="./index51.html">HOME</a>
- <input type="button" id="" value="SALVAR" onClick="salvar()"></input>
- 
- <input type="button" value="URDUME" onClick="exibir()" />
+<div class="btn-bottom">
+  <a href="./teares.html">TEARES</a>
+  <a href="./index51.html">HOME</a>
+  
+   <input type="button" value="URDUME" onClick="exibir()" />
  <input type="button" value="TRAMA" onClick="ocultar()" />
+</div>
 
 </div>
 

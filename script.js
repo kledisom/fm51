@@ -113,9 +113,106 @@ function salvar() {
 	default:
 	console.log('sem valor')
 }
-}
+};
+
+var el = document.querySelectorAll('input');
+
+for(let i = 0; i < 22; i++) {
+	el[i].addEventListener('change', (event) => {
+	  salvar();
+	  document.querySelector('#msgSave').style.cssText = `font-size: 50px`;
+	  document.querySelector('#msgSave2').style.cssText = `font-size: 50px`;
+	  
+	  setTimeout(function() {
+		 document.querySelector('#msgSave').style.cssText = `font-size: 0px`; 
+		 document.querySelector('#msgSave2').style.cssText = `font-size: 0px`; 
+	  }, 2000) // 3 segundos
+	  
+	})
+};
+
+
+
+  function buscaDados(id) {
+
+    const typesOfDefects = [
+	 " fio-colado",
+	 " ponta",
+	 " roloEmb",
+	 " fio-fioLd",
+	 " fio-fioLe",
+	 " fio-fioMeio",
+	 " carritel",
+	 " fioBam",
+	 " slub",
+	 " bucha",
+	 " outros",
+	 " fioGro",
+	 " noTrama",
+	 " tramaFra",
+	 " defBom",
+	 " coniVazio",
+	 " quebraCala",
+	 " aliA",
+	 " aliB",
+	 " slubTram",
+	 " voltTrama",
+	 " outrosTram"
+	]; 
+	
+	typesOfDefects.forEach((currentValue, index, arr) => {
+		let result = localStorage.getItem(id + currentValue);
+		document.querySelectorAll('input')[index].value = result;
+	});	
+  }
 
  
  
- 
- 
+ var tearClicavel = localStorage.getItem('tear clicavel');
+	switch(tearClicavel) {
+	case '1':
+	 buscaDados('tear 01');
+	break;
+	case '2':
+	 buscaDados('tear 02');
+	break;
+		case '3':
+	 buscaDados('tear 03');
+	break;
+		case '4':
+	 buscaDados('tear 04');
+	break;
+		case '5':
+	 buscaDados('tear 05');
+	break;
+		case '6':
+	 buscaDados('tear 06');
+	break;
+		case '7':
+	 buscaDados('tear 07');
+	break;
+		case '8':
+	 buscaDados('tear 08');
+	break;
+		case '9':
+	 buscaDados('tear 09');
+	break;
+		case '10':
+	 buscaDados('tear 10');
+	break;
+		case '11':
+	 buscaDados('tear 11');
+	break;
+		case '12':
+	 buscaDados('tear 12');
+	break;
+	default:
+	console.log('sem valor')
+}
+
+
+
+
+// document.getElementById('msgSave').animate([
+// {transform: 'margin-left: 504px'},
+// ], {})
