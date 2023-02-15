@@ -137,6 +137,7 @@ var nGroup = document.getElementById('nGroup');
 var total = document.getElementById('total');
 
 console.log(nGroup.value)
+	nGroup.value = localStorage.getItem('grupo');
 
 function saveInitial() { 
  localStorage.setItem('inicio', start.value);	
