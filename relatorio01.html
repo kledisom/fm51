@@ -11,7 +11,7 @@
  * {margin: 0; padding: 0}
   
     body {
-	background-color: #363636;
+	background-color: #fff;
 	font-size: 10px;
 	
 	}
@@ -345,7 +345,7 @@
    </tr>
         </tbody>
 		
-		<tbody>
+		<tbody id='selecao2'>
              <tr>
 				<td colspan="26" id="trama">TRAMA</td>
 			 </tr>
@@ -598,25 +598,25 @@
 				<td colspan="7">% DE RUPTURA DA TECELAGEM</td>
 			 </tr>
 			 
-				<tr>
+				<tr class="totalDF">
 					<td class="ocorrencia">TOTAL/URDUME</td>
 				    	<td colspan="8">0</td>    
 							<td colspan="10">0</td>   
 								<td colspan="8">0</td>  
 				</tr>
-				<tr>
+				<tr class="totalDF">
 					<td class="ocorrencia">TOTAL/TRAMA</td>
 						<td colspan="8">0</td>    
 							<td colspan="10">0</td>   
 								<td colspan="8">0</td> 					
 				</tr>
-				<tr>
+				<tr class="totalDF">
 					<td class="ocorrencia">TOTAL/MECÂNICO</td>
 						<td colspan="8">0</td>   
 							<td colspan="10">0</td>   
 								<td colspan="8">0</td> 						
 				</tr>
-				<tr>
+				<tr class="totalDF">
 					<td class="ocorrencia">TOTAL/GERAL</td>
 						<td colspan="8">0</td>
 							<td colspan="10">0</td>   
@@ -699,18 +699,18 @@ switch(grupo) {
   log("error")
 }
 
-  desc[15].innerHTML = localStorage.getItem('art1');
-  desc[16].innerHTML = localStorage.getItem('art2');
-  desc[17].innerHTML = localStorage.getItem('art3');
-  desc[18].innerHTML = localStorage.getItem('art4');
-  desc[19].innerHTML = localStorage.getItem('art5');
-  desc[20].innerHTML = localStorage.getItem('art6'); 
-  desc[21].innerHTML = localStorage.getItem('art7');
-  desc[22].innerHTML = localStorage.getItem('art8');
-  desc[23].innerHTML = localStorage.getItem('art9');
-  desc[24].innerHTML = localStorage.getItem('art10'); 
-  desc[25].innerHTML = localStorage.getItem('art11');
-  desc[26].innerHTML = localStorage.getItem('art12');
+  desc[15].innerHTML = localStorage.getItem('art0');
+  desc[16].innerHTML = localStorage.getItem('art1');
+  desc[17].innerHTML = localStorage.getItem('art2');
+  desc[18].innerHTML = localStorage.getItem('art3');
+  desc[19].innerHTML = localStorage.getItem('art4');
+  desc[20].innerHTML = localStorage.getItem('art5'); 
+  desc[21].innerHTML = localStorage.getItem('art6');
+  desc[22].innerHTML = localStorage.getItem('art7');
+  desc[23].innerHTML = localStorage.getItem('art8');
+  desc[24].innerHTML = localStorage.getItem('art9'); 
+  desc[25].innerHTML = localStorage.getItem('art10');
+  desc[26].innerHTML = localStorage.getItem('art11');
 
  //fim distribuir numeros dos teares---------------------->
 
@@ -805,7 +805,7 @@ parseInt(localStorage.getItem('tear 12 ' + n)),
 	nodelist[23 ].innerHTML = '';
 	}
  
-  log(db)
+  //log(db)
   
  function sum(r) {
 	 var soma = 0;
@@ -871,6 +871,7 @@ parseInt(localStorage.getItem('tear 12 ' + n)),
   parseInt(localStorage.getItem( n + 'aliB')),
   parseInt(localStorage.getItem( n + 'slubTram')),
   parseInt(localStorage.getItem( n + 'voltTrama')),
+  parseInt(localStorage.getItem( n + 'outrosTram')),
  ]
  	 <!-- var somaT = 0; -->
 	 <!-- for(let i = 0; i < dbT.length; i++) { -->
@@ -879,8 +880,10 @@ parseInt(localStorage.getItem('tear 12 ' + n)),
 	 if(x == 'total1') {
 		var soma = 0;
 	     for(let i = 0; i < db.length; i++) {
-		 soma += db[i];
-	    }
+		 if(db[i] > 0) {
+			 soma += db[i];
+		 }
+	    };
 	 	if(soma > 0) {
 	     nodelist[l].innerHTML = soma;
 	    }
@@ -889,11 +892,14 @@ parseInt(localStorage.getItem('tear 12 ' + n)),
 	 if(x == 'total2') {
 		var soma = 0;
 	     for(let i = 0; i < dbT.length; i++) {
-		 soma += dbT[i];
+		    if(dbT[i] > 0) {
+		     soma += dbT[i];
+		    };
 	    }
 	 	if(soma > 0) {
 	     nodelist[l].innerHTML = soma;
 	    }
+
     }
 
 	 
@@ -960,6 +966,104 @@ parseInt(localStorage.getItem('tear 12 ' + n)),
   result('voltTrama');
   result('outrosTram');
   
+  //tratamento dos resultados
+  var nodelist2 = document.getElementById('selecao').children;
+  var nodelist3 = document.getElementById('selecao2').children;
+	var total = 0;
+	
+	let i = 1;
+	let y = 4;
+		
+	for (i && y; i < 25 && y < 17; i++ && y++){
+	  nodelist2[y].children[25].style.backgroundColor = "gold";
+	 	  
+	  verticalTotal(y);
+	  
+	}
+	
+	 //function to find vertical total URDUME
+	 function verticalTotal(line) {
+		 let teste = [...nodelist2[line].children];
+	     let soma = 0;
+	
+	     teste.forEach((cur, index, arr) => {
+
+			 if(teste[index].innerText > 0) {
+				 soma += parseInt(teste[index].innerText);
+				};
+				
+			 if(index == 25) {
+				 //console.log(soma);
+				  nodelist2[line].children[25].innerText = soma
+				};
+			});
+	    };
+		
+		 //tratamento dos resultados
+	 	let countOne = 1;
+		let countTwo = 4;
+			
+		for (countOne && countTwo; countOne < 12 && countTwo < 17; countOne++ && countTwo++){
+			 nodelist3[countOne].children[25].style.backgroundColor = "white";
+			  
+			verticalTotal2(countOne);
+		  
+		}
+			
+		
+	  //function to find vertical total TRAMA
+	 function verticalTotal2(line) {
+		 let teste = [...nodelist3[line].children];
+	     let soma = 0;
+	
+	     teste.forEach((cur, index, arr) => {
+
+			 if(teste[index].innerText > 0) {
+				 soma += parseInt(teste[index].innerText);
+				};
+				
+			 if(index == 25) {
+				 //console.log(soma);
+				  nodelist3[line].children[25].innerText = soma;
+				};
+			});
+	    };
+		
+    //resumo urdume e trama
+	 var totalDurante = localStorage.getItem('totalDurante');
+	 console.log(totalDurante.substr(0, 3))
+	 var totalUrd = (nodelist2[16].children[25].innerText / totalDurante.substr(0, 3)).toFixed(2);	
+	 var totalTra = (nodelist3[11].children[25].innerText / totalDurante.substr(0, 3)).toFixed(2);
+	 var totalUrdQth = nodelist2[16].children[25].innerText;	
+	 var totalTraQth = nodelist3[11].children[25].innerText;
+	 
+	 document.querySelectorAll('.totalDF')[0].children[1].innerHTML = totalUrd;
+	 document.querySelectorAll('.totalDF')[1].children[1].innerHTML = totalTra;
+	 document.querySelectorAll('.totalDF')[3].children[1].innerHTML = parseFloat(totalUrd) + parseFloat(totalTra);
+     //resumo QTH
+	 
+	 const resumo = document.querySelectorAll('#resumo')[0].children[1];
+	 
+	 resumo.addEventListener('click', () => {
+		 var qtdTear = prompt("quantos teares?");
+		 localStorage.setItem('qtdTear', qtdTear);	
+			findQtd();
+	    });
+	 
+	  function findQtd() {
+		  let qtdTear = localStorage.getItem('qtdTear');
+	   
+	     document.querySelectorAll('.totalDF')[0].children[2].innerHTML = `${totalUrdQth} / ${qtdTear} = ${(totalUrdQth/qtdTear).toFixed(1)}`;
+		 document.querySelectorAll('.totalDF')[1].children[2].innerHTML = `${totalTraQth} / ${qtdTear} = ${(totalTraQth/qtdTear).toFixed(1)}`;
+		 document.querySelectorAll('.totalDF')[3].children[2].innerHTML = parseFloat((totalUrdQth/qtdTear) + (totalTraQth/qtdTear)).toFixed(1);
+	 
+	    }
+	  
+		findQtd();
+
+
+
+
 function imprimir() {
  window.print()
 }

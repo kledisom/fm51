@@ -456,6 +456,7 @@ switch(grupo) {
 		 if(count == 11) {
 			  var total = newArrayPoints.reduce((total, numero) => total + numero, 0);
 				document.querySelectorAll('tr')[18].children[6].innerHTML = total;
+				localStorage.setItem('totalDurante', total);
 		 };
 		 
 			
