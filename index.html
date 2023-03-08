@@ -8,7 +8,7 @@
 
 <!-- <link href="../styles/pagina-do-editor.css" rel="stylesheet"/> -->
 <style>
- * {margin: 0; padding: 0}
+ * {margin: 0; padding: 0; box-sizing: border-box}
   
     body {
 	background-color: #363636;
@@ -16,9 +16,12 @@
 	
 	#flexContainer {
 	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	border: 1px solid lime;
+	flex-direction: column;
+	/* flex-wrap: wrap;
+	justify-content: center; */
+	/* border: 1px solid lime; */
+
+	height: 100vh;
     }
 	
 	#titulo {
@@ -43,14 +46,17 @@
 	}
 	
 	.formInicio input {
-	 width: 50px;
+	 height: 30px;
+	 width: 55px;
 	 border: 1px solid red;
+	 margin-top: 10px;
 	 
 	}
 	
 	.formInicio label {
+	 font-Size: 20px;
+	 color: white;
 	 width: 50px;
-	 border: 1px solid red;
 	 margin: 10px 0px 30px 20px;
 	}
 	
@@ -65,11 +71,18 @@
 	}
 	
 	.navInicio a {
+	 display: flex;
+	 align-items: center;
+	 justify-content: center;
+
      background-color: lime;
 	 border-radius: 5px;
 	 margin: 10px;
 	 color: #000;
 	 text-decoration: none;
+	 text-align: center;
+	 height: 60px;
+	 width: 100px;
 	}
 	
 	.navInicio2 {
@@ -83,12 +96,18 @@
 	}
 	
 	.navInicio2 a {
+	display: flex;
+	 align-items: center;
+	 justify-content: center;
+
      background-color: lime;
 	 border-radius: 5px;
 	 margin: 10px;
 	 padding: 10px;
 	 color: #000;
 	 text-decoration: none;
+	 height: 60px;
+	 width: 100px;
 	}
 	
 </style>
@@ -99,16 +118,21 @@
  
     <form class="formInicio">
 	    <div>
-		 <label>INICIO</label>
-		 <input type="text" id="start" />
-		 <label>FIM</label>
-		 <input type="text" id="end" />
+			<span>
+				<label>INICIO</label>
+				<input type="text" id="start" />
+			</span>
+	<span>
+		<label style="margin-left: 46px">FIM</label>
+		<input type="text" id="end" />
+	</span>
+		
 	    </div>
 
 		<div>
 		 <label>Nº DO GRUPO</label>
-		 <input  type="number" id="nGroup" value="3"/>
-		 <label>T/TOTAL</label>
+		 <input  type="number" id="nGroup" value=""/>
+		 <label style="margin-left: 66px">T/TOTAL</label>
 		 <input type="number" id="total" />
 	    </div>
     </form>
@@ -125,8 +149,9 @@
 <div class="navInicio2">
  <!-- <a  >SET ...</a> -->
  <a href="./teares.html" onclick="saveInitial()">INICIAR</a>
- <a href="./relatorio01.html">rel01</a>
- <a href="./relatorio02.html">rel02</a>
+ <a href="./relatorio01.html">REL01</a>
+ <a href="./relatorio02.html">REL02</a>
+ <a id="limpa-storage">CLEAR</a>
 </div>
 
 <script>
@@ -136,8 +161,7 @@ var end = document.getElementById('end');
 var nGroup = document.getElementById('nGroup');
 var total = document.getElementById('total');
 
-console.log(nGroup.value)
-	nGroup.value = localStorage.getItem('grupo');
+nGroup.value = localStorage.getItem('grupo');
 
 function saveInitial() { 
  localStorage.setItem('inicio', start.value);	
@@ -152,7 +176,11 @@ document.getElementById('start').value = localStorage.getItem('inicio');
 document.getElementById('end').value = localStorage.getItem('fim');
 document.getElementById('total').value = localStorage.getItem('total');
 
- 
+document.getElementById('limpa-storage').onclick = function(){
+	localStorage.clear();
+	location.reload()
+}
+
 </script>
  
 
