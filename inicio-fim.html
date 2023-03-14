@@ -168,8 +168,8 @@
 
 
 <div class="navInicio2">
- <a href="index.html">HOME</a>
- <a onclick="save()">SALVAR</a>
+ <a href="index.html" onclick="save()">HOME</a>
+ <!-- <a onclick="save()">SALVAR</a> -->
 </div>
 
 <script>
@@ -261,7 +261,7 @@ switch(grupo) {
 		};
 
 		localStorage.setItem('inicioBD', JSON.stringify(inicioBD))
-		confirm('Você deseja salvar esses dados?')
+		//confirm('Você deseja salvar esses dados?')
     };
 	
 	var obj = JSON.parse(localStorage.getItem('inicioBD'));
