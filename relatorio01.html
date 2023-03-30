@@ -75,11 +75,31 @@
 	 margin: 50px;
 	  font-size: 20px;
 	}
+
+  .cabecalho {
+		width: 95%;
+		margin-bottom: 20px;
+	}
+	.cabecalho img{
+		width: 100%;
+	}
+
+  @media print {
+		.btn-back {
+			display: none;
+		}
+	}
+
 	
 </style>
 
 </head>
 <body id="flexContainer">
+  <header>
+    <div class="cabecalho">
+      <img src="./fm51_cabecalho_page2.PNG" alt="">
+    </div>
+   </header>
  
     <table border="1">
        <thead>
@@ -628,13 +648,13 @@
 </table>
 
 
-<a href="index.html">back</a>
-<button onclick="imprimir()">print</button>
+<a class="btn-back" href="index.html">back</a>
+<button class="btn-back" onclick="imprimir()">print</button>
 
 
-<div id="pega">
+<!-- <div id="pega">
 <p>a</p><p>b</p><p>c</p>
-</div>
+</div> -->
 
 
 <script>
