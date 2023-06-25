@@ -125,7 +125,7 @@
 
 </head>
 <body id="flexContainer">
- <div id="titulo">TESTE DE RUPTURA</div>
+ <div id="titulo">TESTE DE RUPTURA v1.0.2</div>
  
     <form class="formInicio">
 	    <div>
@@ -172,8 +172,6 @@
 <canvas id="myChart2" style="width:100%;max-width:700px"></canvas>
 
 <script>
-//alert('Atenção o sistema está em manutenção...');
-	
 	const btnsGrafico = document.querySelectorAll('#btn-graficos>button');
 	const chart01 = document.querySelector('#myChart');
 	const chart02 = document.querySelector('#myChart2');
@@ -233,7 +231,9 @@ var xValues = ["Fio Colado",
    "outros",
    "fio grosso",
    ];
-var yValues = [55, 49, 44, 24, 15,10,10,10,10,10,10,20];
+
+   let quebras = JSON.parse(localStorage.getItem('graficoUrd'));
+var yValues = [quebras[0], quebras[1], quebras[2], quebras[3], quebras[4],quebras[5],quebras[6],quebras[7],quebras[8],quebras[9],quebras[10],quebras[11]];
 var barColors = [
   "#b91d47",
   "#00aba9",
@@ -310,6 +310,68 @@ new Chart("myChart2", {
     }
   }
 });
+
+var dado1 = 0;
+var dado2 = 0;
+var dado3 = 0;
+var dado4 = 0;
+var dado5 = 0;
+var dado6 = 0;
+var dado7 = 0;
+var dado8 = 0;
+var dado9 = 0;
+var dado10 = 0;
+var dado11 = 0;
+var dado12 = 0;
+
+for(let i = 1; i < 13; i++) {
+	dado1 += localStorage.getItem(`tear 0${i} fio-colado`) != null ? parseInt(localStorage.getItem(`tear 0${i} fio-colado`)) : 0;
+	dado2 += localStorage.getItem(`tear 0${i} ponta`) != null ? parseInt(localStorage.getItem(`tear 0${i} ponta`)) : 0;
+	dado3 += localStorage.getItem(`tear 0${i} roloEmb`) != null ? parseInt(localStorage.getItem(`tear 0${i} roloEmb`)) : 0;
+	dado4 += localStorage.getItem(`tear 0${i} fio-fioLd`) != null ? parseInt(localStorage.getItem(`tear 0${i} fio-fioLd`)) : 0;
+	dado5 += localStorage.getItem(`tear 0${i} fio-fioLe`) != null ? parseInt(localStorage.getItem(`tear 0${i} fio-fioLe`)) : 0;
+	dado6 += localStorage.getItem(`tear 0${i} fio-fioMeio`) != null ? parseInt(localStorage.getItem(`tear 0${i} fio-fioMeio`)) : 0;
+	dado7 += localStorage.getItem(`tear 0${i} carritel`) != null ? parseInt(localStorage.getItem(`tear 0${i} carritel`)) : 0;
+	dado8 += localStorage.getItem(`tear 0${i} fioBam`) != null ? parseInt(localStorage.getItem(`tear 0${i} fioBam`)) : 0;
+	dado9 += localStorage.getItem(`tear 0${i} slub`) != null ? parseInt(localStorage.getItem(`tear 0${i} slub`)) : 0;
+	dado10 += localStorage.getItem(`tear 0${i} bucha`) != null ? parseInt(localStorage.getItem(`tear 0${i} bucha`)) : 0;
+	dado11 += localStorage.getItem(`tear 0${i} outros`) != null ? parseInt(localStorage.getItem(`tear 0${i} outros`)) : 0;
+	dado12 += localStorage.getItem(`tear 0${i} fioGro`) != null ? parseInt(localStorage.getItem(`tear 0${i} fioGro`)) : 0;
+
+	
+
+/* 	console.log(dado1,
+dado2,
+dado3,
+dado4,
+dado5,
+dado6,
+dado7,
+dado8,
+dado9,
+dado10,
+dado11,
+dado12) */
+}
+
+localStorage.setItem('graficoUrd', JSON.stringify([dado1,
+dado2,
+dado3,
+dado4,
+dado5,
+dado6,
+dado7,
+dado8,
+dado9,
+dado10,
+dado11,
+dado12]));
+
+
+
+
+
+
 </script>
  
 
