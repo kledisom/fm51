@@ -170,7 +170,7 @@
 
 <canvas id="myChart" style="width:100%;max-width:700px"></canvas>
 <canvas id="myChart2" style="width:100%;max-width:700px"></canvas>
-
+<div id="console"></div>
 <script>
 	const btnsGrafico = document.querySelectorAll('#btn-graficos>button');
 	const chart01 = document.querySelector('#myChart');
@@ -301,6 +301,7 @@ var xValues = ["Fio Colado",
    ];
 
    let quebras = JSON.parse(localStorage.getItem('graficoUrd'));
+	document.querySelector('#console').innerHTML = quebras;
 var yValues = [quebras[0], quebras[1], quebras[2], quebras[3], quebras[4],quebras[5],quebras[6],quebras[7],quebras[8],quebras[9],quebras[10],quebras[11]];
 var barColors = [
   "#b91d47",
