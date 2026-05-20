@@ -1,0 +1,19 @@
+{
+  "name": "Teste de Ruptura",
+  "short_name": "TesteRuptura",
+  "description": "App de coleta de dados de teste de ruptura",
+  "start_url": "./index2.html",
+  "display": "standalone",
+  "background_color": "#050714",
+  "theme_color": "#a1ffeb",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "tecelagem.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "scope": "./"
+}

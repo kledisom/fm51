@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, user-scalable=no" />
+  <title>Pontos Iniciais e Finais</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      font-family: "Space Grotesk", system-ui, sans-serif;
+      --panel: rgba(255, 255, 255, 0.05);
+      --border: rgba(255, 255, 255, 0.08);
+      --accent: #a1ffeb;
+      --muted: rgba(255, 255, 255, 0.75);
+      --panel-strong: rgba(255, 255, 255, 0.03);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      background: linear-gradient(180deg, #050714 0%, #131a2d 60%, #1f1f35 100%);
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 32px 16px;
+    }
+
+    #page-shell {
+      width: min(1100px, 100%);
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .hero {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 28px;
+      box-shadow: 0 18px 55px rgba(0, 0, 0, 0.45);
+    }
+
+    .hero h1 {
+      font-size: clamp(1.8rem, 3vw, 2.4rem);
+      margin-bottom: 6px;
+      letter-spacing: 0.04em;
+    }
+
+    .hero small {
+      color: var(--muted);
+      display: block;
+      margin-bottom: 14px;
+    }
+
+    .pill {
+      display: inline-flex;
+      padding: 4px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(99, 245, 201, 0.12);
+      color: var(--accent);
+      font-size: 0.85rem;
+      margin-bottom: 8px;
+    }
+
+    .panel {
+      background: var(--panel-strong);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 24px;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.35);
+    }
+
+    .tear-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+    }
+
+    .tear-row {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      padding: 12px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.04);
+    }
+
+    .tear-row p {
+      font-size: 0.9rem;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+    }
+
+    input {
+      width: 100%;
+      padding: 10px 12px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.03);
+      color: #fff;
+      font-weight: 500;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    input:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 2px rgba(99, 245, 201, 0.3);
+    }
+
+    .nav-row {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .nav-row a {
+      padding: 12px 20px;
+      background: #101529;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: var(--accent);
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .nav-row a:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 20px 12px;
+      }
+
+      .panel {
+        padding: 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="page-shell">
+    <header class="hero">
+      <span class="pill">INÍCIO / FIM</span>
+      <h1>Pontos iniciais e finais</h1>
+      <small>Registre o horário de início e fim para cada tear antes de salvar.</small>
+    </header>
+
+    <section class="panel">
+      <form class="tear-grid">
+        <div class="tear-row">
+          <p>TEAR 01</p>
+          <input name="INI" placeholder="INICIO" />
+          <input name="FIM" placeholder="FIM" />
+        </div>
+        <div class="tear-row">
+          <p>TEAR 02</p>
+          <input name="INI" placeholder="INICIO" />
+          <input name="FIM" placeholder="FIM" />
+        </div>
+        <div class="tear-row">
+          <p>TEAR 03</p>
+          <input name="INI" placeholder="INICIO" />
+          <input name="FIM" placeholder="FIM" />
+        </div>
+        <div class="tear-row">
+          <p>TEAR 04</p>
+          <input name="INI" placeholder="INICIO" />
+          <input name="FIM" placeholder="FIM" />
+        </div>
+        <div class="tear-row">
+          <p>TEAR 05</p>
+          <input name="INI" placeholder="INICIO" />
+          <input name="FIM" placeholder="FIM" />
+        </div>
+        <div class="tear-row">
+          <p>TEAR 06</p>
+          <input name="INI" placeholder="INICIO" />
+          <input name="FIM" placeholder="FIM" />
+        </div>
+        <div class="tear-row">
+          <p>TEAR 07</p>
+          <input name="INI" placeholder="INICIO" />
+          <input name="FIM" placeholder="FIM" />
+        </div>
+        <div class="tear-row">
+          <p>TEAR 08</p>
+          <input name="INI" placeholder="INICIO" />
+          <input name="FIM" placeholder="FIM" />
+        </div>
+        <div class="tear-row">
+          <p>TEAR 09</p>
+          <input name="INI" placeholder="INICIO" />
+          <input name="FIM" placeholder="FIM" />
+        </div>
+        <div class="tear-row">
+          <p>TEAR 10</p>
+          <input name="INI" placeholder="INICIO" />
+          <input name="FIM" placeholder="FIM" />
+        </div>
+        <div class="tear-row">
+          <p>TEAR 11</p>
+          <input name="INI" placeholder="INICIO" />
+          <input name="FIM" placeholder="FIM" />
+        </div>
+        <div class="tear-row">
+          <p>TEAR 12</p>
+          <input name="INI" placeholder="INICIO" />
+          <input name="FIM" placeholder="FIM" />
+        </div>
+      </form>
+    </section>
+
+    <div class="nav-row">
+      <a href="./index2.html" onclick="save()">HOME</a>
+    </div>
+  </div>
+
+  <script>
+    
+    //! original script content kept
+/*     function _0x22ae(){const _0x285793=['72UhLyUR','TEAR 78','8619974mtcwAe','value','TEAR 77','TEAR 40','166LtrDQr','TEAR 82','TEAR 16','TEAR 58','TEAR 79','TEAR 60','TEAR 39','TEAR 87','inicioBD','TEAR 38','TEAR 32','TEAR 57','TEAR 10','TEAR 24','5211PBdqXS','24jwSVDu','TEAR 3','10XGefsa','TEAR 89','TEAR 41','TEAR 54','TEAR 76','[name="FIM"]','TEAR 19','TEAR 5','TEAR 53','TEAR 50','TEAR 21','TEAR 37','TEAR 15','TEAR 70','TEAR 14','TEAR 27','TEAR 30','TEAR 7','1938672XmTrkM','parse','setItem','TEAR 86','TEAR 34','3wDwebR','TEAR 74','TEAR 64','grupo','TEAR 42','TEAR 81','TEAR 75','TEAR 9','TEAR 17','TEAR 33','TEAR 85','TEAR 2','TEAR 6','TEAR 55','5337ZflUID','TEAR 83','TEAR 4','TEAR 65','TEAR 35','TEAR 13','TEAR 61','TEAR 62','input','TEAR 73','TEAR 31','2001883KunPgX','TEAR 23','fim','TEAR 80','104993QoKKdd','TEAR 68','innerHTML','TEAR 63','TEAR 45','stringify','2264kPsAYc','TEAR 47','TEAR 1','TEAR 28','TEAR 71','TEAR 26','TEAR 72','TEAR 66','TEAR 22','TEAR 52','2414385FyLDQm','getItem','TEAR 20','TEAR 43','TEAR 69','querySelectorAll'];_0x22ae=function(){return _0x285793;};return _0x22ae();}
+    const _0x2ee3a9=_0x868f;(function(_0x10156a,_0x24fd57){const _0xe61f94=_0x868f,_0x401df3=_0x10156a();while(!![]){try{const _0x50624d=parseInt(_0xe61f94(0xf2))/0x1*(parseInt(_0xe61f94(0x11d))/0x2)+parseInt(_0xe61f94(0x145))/0x3*(parseInt(_0xe61f94(0x140))/0x4)+parseInt(_0xe61f94(0x111))/0x5+parseInt(_0xe61f94(0x117))/0x6*(-parseInt(_0xe61f94(0x101))/0x7)+-parseInt(_0xe61f94(0x107))/0x8*(parseInt(_0xe61f94(0x103))/0x9)+parseInt(_0xe61f94(0x10d))/0xa*(-parseInt(_0xe61f94(0x12f))/0xb)+parseInt(_0xe61f94(0x115))/0xc*(-parseInt(_0xe61f94(0x119))/0xd);if(_0x50624d===_0x24fd57)break;else _0x401df3['push'](_0x401df3['shift']());}catch(_0x38e545){_0x401df3['push'](_0x401df3['shift']());}}}(_0x22ae,0x79ee7));function _0x868f(_0x3b3d84,_0x1d2400){const _0x22ae85=_0x22ae();return _0x868f=function(_0x868f91,_0x48c996){_0x868f91=_0x868f91-0xf7;let _0x4ede78=_0x22ae85[_0x868f91];return _0x4ede78;},_0x868f(_0x3b3d84,_0x1d2400);}const desc=[{innerHTML:'TEAR 62',style:{fontSize:'1.25rem',fontWeight:600}},{innerHTML:'TEAR 59',style:{fontSize:'1.25rem',fontWeight:600}},{innerHTML:'TEAR 4',style:{fontSize:'1.25rem',fontWeight:600}},{innerHTML:'TEAR 1',style:{fontSize:'1.25rem',fontWeight:600}},{innerHTML:'TEAR 31',style:{fontSize:'1.25rem',fontWeight:600}},{innerHTML:'TEAR 3',style:{fontSize:'1.25rem',fontWeight:600}},{innerHTML:'TEAR 12',style:{fontSize:'1.25rem',fontWeight:600}},{innerHTML:'TEAR 12',style:{fontSize:'1.25rem',fontWeight:600}},{innerHTML:'TEAR 14',style:{fontSize:'1.25rem',fontWeight:600}},{innerHTML:'TEAR 32',style:{fontSize:'1.25rem',fontWeight:600}},{innerHTML:'TEAR 22',style:{fontSize:'1.25rem',fontWeight:600}},{innerHTML:'TEAR 24',style:{fontSize:'1.25rem',fontWeight:600}}];const get=document['querySelectorAll'](_0x2ee3a9(0xfa)),getINI=document[_0x2ee3a9(0x116)]('[name="INI"]'),getFIM=document[_0x2ee3a9(0x116)](_0x2ee3a9(0x133));function save(){const _0x2b470e=_0x2ee3a9;var _0x5e6cb4={'inicio':[get[0x0][_0x2b470e(0x11a)],get[0x2][_0x2b470e(0x11a)],get[0x4][_0x2b470e(0x11a)],get[0x6][_0x2b470e(0x11a)],get[0x8]['value'],get[0xa][_0x2b470e(0x11a)],get[0xc][_0x2b470e(0x11a)],get[0xe][_0x2b470e(0x11a)],get[0x10][_0x2b470e(0x11a)],get[0x12][_0x2b470e(0x11a)],get[0x14][_0x2b470e(0x11a)],get[0x16][_0x2b470e(0x11a)]],'fim':[get[0x1]['value'],get[0x3][_0x2b470e(0x11a)],get[0x5]['value'],get[0x7]['value'],get[0x9][_0x2b470e(0x11a)],get[0xb][_0x2b470e(0x11a)],get[0xd][_0x2b470e(0x11a)],get[0xf][_0x2b470e(0x11a)],get[0x11]['value'],get[0x13][_0x2b470e(0x11a)],get[0x15][_0x2b470e(0x11a)],get[0x17][_0x2b470e(0x11a)]]};localStorage[_0x2b470e(0x142)]('inicioBD',JSON[_0x2b470e(0x106)](_0x5e6cb4));};var obj=JSON[_0x2ee3a9(0x141)](localStorage[_0x2ee3a9(0x112)](_0x2ee3a9(0x125)));for(let i=0x0;i<0xc;i++){getINI[i]['value']=obj['inicio'][i],getFIM[i]['value']=obj[_0x2ee3a9(0xff)][i];};
+ */  </script>
+</body>

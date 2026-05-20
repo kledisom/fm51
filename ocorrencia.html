@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, user-scalable=no" />
+  <title>Ocorrências</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      font-family: "Space Grotesk", system-ui, sans-serif;
+      --panel: rgba(255, 255, 255, 0.05);
+      --panel-strong: rgba(255, 255, 255, 0.02);
+      --border: rgba(255, 255, 255, 0.08);
+      --accent: #a1ffeb;
+      --muted: rgba(255, 255, 255, 0.75);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      background: linear-gradient(180deg, #050714 0%, #131a2d 60%, #1f1f35 100%);
+      color: #fff;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 32px 16px;
+    }
+
+    #page-shell {
+      width: min(1100px, 100%);
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .hero {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 26px 28px;
+      box-shadow: 0 18px 55px rgba(0, 0, 0, 0.45);
+    }
+
+    .hero h1 {
+      font-size: clamp(1.8rem, 3vw, 2.4rem);
+      letter-spacing: 0.04em;
+      margin-bottom: 6px;
+    }
+
+    .hero small {
+      color: var(--muted);
+      display: block;
+      margin-bottom: 12px;
+    }
+
+    .pill {
+      display: inline-flex;
+      padding: 4px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(99, 245, 201, 0.12);
+      color: var(--accent);
+      font-size: 0.85rem;
+      margin-bottom: 8px;
+    }
+
+    .panel {
+      background: var(--panel-strong);
+      border-radius: 18px;
+      border: 1px solid var(--border);
+      padding: 24px;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .form-row {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      padding: 14px;
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.04);
+      min-height: 120px;
+    }
+
+    .input-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .input-row button {
+      width: 36px;
+      height: 36px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: #101529;
+      color: var(--accent);
+      font-size: 1.4rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    .input-row button:active {
+      transform: scale(0.95);
+    }
+
+    .form-row label {
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+    }
+
+    .form-row input {
+      width: 100%;
+      padding: 10px 12px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.03);
+      color: #fff;
+      font-weight: 500;
+      font-size: 1rem;
+      text-align: center;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .form-row input:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 2px rgba(99, 245, 201, 0.3);
+    }
+
+    .btn-row {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn-row button,
+    .btn-row a {
+      border: none;
+      border-radius: 12px;
+      padding: 12px 20px;
+      background: #101529;
+      color: var(--accent);
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-decoration: none;
+      cursor: pointer;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .btn-row button:hover,
+    .btn-row a:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.45);
+    }
+
+    .message {
+      text-align: center;
+      color: var(--accent);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .message.visible {
+      opacity: 1;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 24px 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="page-shell">
+    <header class="hero">
+      <span class="pill">REGISTRO</span>
+      <h1>Ocorrências</h1>
+      <small>Informe as ocorrências de Urdume e Trama antes de seguir.</small>
+    </header>
+
+    <section class="panel">
+      <div class="form-group" id="formInicio">
+        <div class="pill">Urdume</div>
+        <div class="form-grid" id="urdume-grid"></div>
+        <div class="message" id="msgSave">Urdume salvo</div>
+      </div>
+      <div class="form-group" id="formInicio2">
+        <div class="pill">Trama</div>
+        <div class="form-grid" id="trama-grid"></div>
+        <div class="message" id="msgSave2">Trama salva</div>
+      </div>
+    </section>
+
+    <div class="btn-row">
+      <a href="./teares.html">TEARES</a>
+      <a href="./index2.html">HOME</a>
+      <button type="button" onclick="exibir()">URDUME</button>
+      <button type="button" onclick="ocultar()">TRAMA</button>
+    </div>
+  </div>
+
+  <script>
+    const urdumeFields = [
+      { label: 'FIO COLADO', value: '0' },
+      { label: 'SUB. PONTA DE FIO', value: '0' },
+      { label: 'ROLO EMB.', value: '0' },
+      { label: 'FIO FRACO L/D', value: '0' },
+      { label: 'FIO FRACO L/E', value: '0' },
+      { label: 'FIO FRACO - MEIO', value: '0' },
+      { label: 'CARRITEL', value: '0' },
+      { label: 'FIO BAMBO', value: '0' },
+      { label: 'SLUB', value: '0' },
+      { label: 'BUCHA', value: '0' },
+      { label: 'OUTROS', value: '0' },
+      { label: 'FIO GROSSO', value: '0' }
+    ];
+
+    const tramaFields = [
+      { label: 'NÓ NA TRAMA', value: '0' },
+      { label: 'TRAMA FRACA', value: '0' },
+      { label: 'DEF. BOBINA', value: '0' },
+      { label: 'CONICAL VAZIO', value: '0' },
+      { label: 'QUEB. TRAMA CALA', value: '0' },
+      { label: 'PRÉ-ALIMEN. A', value: '0' },
+      { label: 'PRÉ-ALIMEN. B', value: '0' },
+      { label: 'SLUB', value: '0' },
+      { label: 'VOLTANDO TRAMA', value: '0' },
+      { label: 'OUTROS', value: '0' }
+    ];
+
+      const urdumeGrid = document.getElementById('urdume-grid');
+      const tramaGrid = document.getElementById('trama-grid');
+
+      const adjustValue = (input, delta) => {
+        const current = parseInt(input.value, 10);
+        const next = Number.isNaN(current) ? 0 : current;
+        input.value = Math.max(0, next + delta);
+      };
+
+      const createField = (label, id, value) => {
+        const wrapper = document.createElement('div');
+        wrapper.className = 'form-row';
+        const labelEl = document.createElement('label');
+        labelEl.textContent = label;
+        const input = document.createElement('input');
+        input.id = id;
+        input.value = value;
+        const inputRow = document.createElement('div');
+        inputRow.className = 'input-row';
+        const minus = document.createElement('button');
+        minus.type = 'button';
+        minus.textContent = '−';
+        minus.addEventListener('click', () => adjustValue(input, -1));
+        const plus = document.createElement('button');
+        plus.type = 'button';
+        plus.textContent = '+';
+        plus.addEventListener('click', () => adjustValue(input, 1));
+        inputRow.append(minus, input, plus);
+        wrapper.append(labelEl, inputRow);
+        return wrapper;
+      };
+
+      urdumeFields.forEach((field, index) => {
+        urdumeGrid.appendChild(createField(field.label, `display${index + 1}`, field.value));
+      });
+
+      tramaFields.forEach((field, index) => {
+        tramaGrid.appendChild(createField(field.label, `display${(index + 1) * 10}`, field.value));
+      });
+    </script>
+  <script src="script.js"></script>
+</body>

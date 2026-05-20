@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, user-scalable=no" />
+  <title>Selecione o Tear</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      font-family: "Space Grotesk", system-ui, sans-serif;
+      --panel: rgba(255, 255, 255, 0.05);
+      --border: rgba(255, 255, 255, 0.08);
+      --accent: #a1ffeb;
+      --muted: rgba(255, 255, 255, 0.65);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      background: linear-gradient(180deg, #050714 0%, #131a2d 60%, #1f1f35 100%);
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 32px 16px;
+    }
+
+    #page-shell {
+      width: min(1100px, 100%);
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .hero {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 26px 28px;
+      box-shadow: 0 18px 55px rgba(0, 0, 0, 0.45);
+    }
+
+    .hero h1 {
+      font-size: clamp(1.8rem, 3vw, 2.2rem);
+      letter-spacing: 0.04em;
+    }
+
+    .hero small {
+      color: var(--muted);
+      margin-top: 6px;
+      display: block;
+    }
+
+    .pill {
+      display: inline-flex;
+      padding: 4px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(99, 245, 201, 0.12);
+      color: var(--accent);
+      font-size: 0.85rem;
+      margin-bottom: 8px;
+    }
+
+    .panel {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 24px;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
+    }
+
+    .teares-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 16px;
+    }
+
+    .teares-grid button {
+      width: 100%;
+      border: none;
+      border-radius: 14px;
+      padding: 18px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      background: #101529;
+      color: var(--accent);
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .teares-grid button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.45);
+    }
+
+    .nav-row {
+      display: flex;
+      justify-content: center;
+    }
+
+    .nav-row a {
+      padding: 12px 20px;
+      background: #101529;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .nav-row a:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 24px 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="page-shell">
+    <header class="hero">
+      <span class="pill">GRUPOS</span>
+      <h1>Selecione o tear</h1>
+      <small>Escolha o tear atual para seguir ao registro de ocorrências.</small>
+    </header>
+
+    <section class="panel">
+      <div class="teares-grid" id="teares-grid"></div>
+    </section>
+
+    <div class="nav-row">
+      <a href="./index2.html">HOME</a>
+    </div>
+  </div>
+
+  <script>
+    const grid = document.getElementById('teares-grid');
+    const buttons = [];
+
+    for (let i = 1; i <= 12; i++) {
+      const button = document.createElement('button');
+      button.textContent = String(i).padStart(2, '0');
+      button.dataset.index = i - 1;
+      button.addEventListener('click', () => state(i - 1, i));
+      buttons.push(button);
+      grid.appendChild(button);
+    }
+
+    let grupo = parseInt(localStorage.getItem('grupo'), 10) || 1;
+
+    const ranges = [
+      ['01', '12'],
+      ['13', '24'],
+      ['25', '36'],
+      ['37', '48'],
+      ['49', '60'],
+      ['61', '72'],
+      ['73', '84'],
+      ['85', '96']
+    ];
+
+    const startIndex = Math.min(Math.max(grupo - 1, 0), ranges.length - 1);
+    let current = parseInt(ranges[startIndex][0], 10);
+
+    buttons.forEach((button) => {
+      button.textContent = `TEAR ${String(current).padStart(2, '0')}`;
+      current += 1;
+    });
+
+    function state(position, value) {
+      localStorage.setItem('tear clicavel', value);
+      location.href = './ocorrencia.html';
+    }
+  </script>
+</body>
