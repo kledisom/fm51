@@ -179,16 +179,16 @@
 
 	<main style="border-top: 1px solid pink;border-bottom: 1px solid pink;">
 		<div class="navInicio">
-			<a href="./inicio-fim.html" onclick="saveInitial()">PONTOS INICIAIS</a>
-			<a href="./inicio-fim.html" onclick="saveInitial()">PONTOS FINAIS</a>
-			<a href="rpm-artigo.html" onclick="saveInitial()">INSERIR ARTIGOS</a>
-			<a onclick="saveInitial()">INSERIR RPM</a>
+			<a href="./inicio-fim.html" onclick="saveInitial(); window.location.href = './inicio-fim.html'; return false;">PONTOS INICIAIS</a>
+			<a href="./inicio-fim.html" onclick="saveInitial(); window.location.href = './inicio-fim.html'; return false;">PONTOS FINAIS</a>
+			<a href="rpm-artigo.html" onclick="saveInitial(); window.location.href = './rpm-artigo.html'; return false;">INSERIR ARTIGOS</a>
+			<a href="#" onclick="saveInitial(); return false;">INSERIR RPM</a>
 		</div>
 
 		<div class="navInicio2">
-			<a href="./teares.html" onclick="saveInitial()">INICIAR</a>
-			<a href="./relatorio01.html" onclick="saveInitial()">REL01</a>
-			<a href="./relatorio02.html" onclick="saveInitial()">REL02</a>
+			<a href="./teares.html" onclick="saveInitial(); window.location.href = './teares.html'; return false;">INICIAR</a>
+			<a href="./relatorio01.html" onclick="saveInitial(); window.location.href = './relatorio01.html'; return false;">REL01</a>
+			<a href="./relatorio02.html" onclick="saveInitial(); window.location.href = './relatorio02.html'; return false;">REL02</a>
 			<a id="limpa-storage">CLEAR</a>
 		</div>
 	</main>
@@ -233,7 +233,7 @@
 		var nGroup = document.getElementById('nGroup');
 		var total = document.getElementById('total');
 
-		nGroup.value = localStorage.getItem('grupo');
+		nGroup.value = localStorage.getItem('grupo') || '';
 
 		function saveInitial() {
 			localStorage.setItem('inicio', start.value);
